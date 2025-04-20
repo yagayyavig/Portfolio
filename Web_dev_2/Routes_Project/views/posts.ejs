@@ -16,9 +16,9 @@
       <div class="authOptions">
         <h1>Homepage</h1>
         <% if (!user) { %>
-          <a role="button" href="/auth/login">Login</a>
+          <a role="button" href="/web2/auth/login">Login</a>
         <% } else { %>
-          <a role="button" href="/auth/logout">Logout</a>
+          <a role="button" href="/web2/auth/logout">Logout</a>
         <% } %>
       </div>
 
@@ -29,25 +29,25 @@
         <% if (posts.length > 0) { %>
           <% posts.forEach(post => { %>
             <div class="individualPost">
-              <a href="/posts/show/<%= post.id %>"><%= post.title %></a>
+              <a href="/web2/posts/show/<%= post.id %>"><%= post.title %></a>
               <p><%= post.description %></p>
             </div>
           <% }) %>
         <% } else { %>
-          <p>No posts yet. Be the first to <a href="/posts/create">create one</a>!</p>
+          <p>No posts yet. Be the first to <a href="/web2/posts/create">create one</a>!</p>
         <% } %>
       </div>
 
       <div>
-        <a href="/subs/list">Subgroups</a>
+        <a href="/web2/subs/list">Subgroups</a>
       </div>
 
       <% if (user) { %>
         <div>
-          <a role="button" href="/posts/create">Create Post</a>
+          <a role="button" href="/web2/posts/create">Create Post</a>
         </div>
       <% } else { %>
-        <p>Please <a href="/auth/login">login</a> to make a post.</p>
+        <p>Please <a href="/web2/auth/login">login</a> to make a post.</p>
       <% } %>
 
       <!-- ✅ Back to Homepage Button -->

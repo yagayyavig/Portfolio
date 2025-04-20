@@ -21,6 +21,7 @@ app.use(
   })
 );
 
+const router = express.Router();
 import indexRoute from "./routers/indexRoute";
 import authRoute from "./routers/authRoute";
 import postsRouters from "./routers/postRouters";
@@ -35,6 +36,8 @@ app.use("/auth", authRoute);
 app.use("/posts", postsRouters);
 app.use("/subs", subsRouters);
 app.use("/", indexRoute);
+
+app.use("/web2", router);
 
 app.listen(PORT, () =>
   console.log(`🚀 Server running: http://localhost:${PORT}/`)

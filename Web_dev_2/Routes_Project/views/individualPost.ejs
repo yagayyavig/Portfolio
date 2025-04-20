@@ -30,23 +30,23 @@
 
     <% if (user) { %>
       <h3>Add a Comment</h3>
-      <form action="/posts/comment-create/<%= post.id %>" method="POST">
+      <form action="/web2/posts/comment-create/<%= post.id %>" method="POST">
         <textarea name="description" required></textarea>
         <button type="submit">Comment</button>
       </form>
     <% } else { %>
-      <p><a href="/login">Login</a> to comment</p>
+      <p><a href="/web2/login">Login</a> to comment</p>
     <% } %>
 
-    <form action="/posts/edit/<%= post.id %>" method="GET">
+    <form action="/web2/posts/edit/<%= post.id %>" method="GET">
       <button type="submit">Edit Post</button>
     </form>
     <!--delete post button -->
-    <form action="/posts/deleteconfirm/<%= post.id %>" method="GET">
+    <form action="/web2/posts/deleteconfirm/<%= post.id %>" method="GET">
       <button type="submit">Delete Post</button>
     </form> 
 
-      <p><a href="/posts">← Back to all posts</a></p>
+      <p><a href="/web2/posts">← Back to all posts</a></p>
 
   </main>
 </body>

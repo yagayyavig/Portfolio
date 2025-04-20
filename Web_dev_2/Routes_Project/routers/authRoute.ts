@@ -10,8 +10,8 @@ router.get("/login", async (req, res) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/posts",
-    failureRedirect: "/auth/login",
+    successRedirect: "/web2/posts",
+    failureRedirect: "/web2/auth/login",
   })
 );
 

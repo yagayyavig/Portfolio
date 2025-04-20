@@ -15,7 +15,7 @@
     <main>
       <div class="authOptions">
         <h1>Edit Post</h1>
-        <a role="button" href="/posts">Home</a>
+        <a role="button" href="/web2/posts">Home</a>
       </div>
 
       <% if (locals.error) { %>
@@ -24,7 +24,7 @@
         </article>
       <% } %>
 
-      <form action="/posts/edit/<%= post.id %>" method="POST">
+      <form action="/web2/posts/edit/<%= post.id %>" method="POST">
         <div>
           <label for="title">Title</label>
           <input 
@@ -73,7 +73,7 @@
 
         <div>
           <button type="submit">Update Post</button>
-          <a role="button" href="/posts/show/<%= post.id %>" class="secondary">Cancel</a>
+          <a role="button" href="/web2/posts/show/<%= post.id %>" class="secondary">Cancel</a>
         </div>
       </form>
     </main>
