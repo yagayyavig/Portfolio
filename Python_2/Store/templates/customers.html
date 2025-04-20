@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+<h1>Our Customers</h1>
+
+<table>
+    <tr>
+        <th>ID <a href="/customers?sort=id" class="btn"> Sort by id</a></th>
+        <th>Name <a href="/customers?sort=name" class="btn"> Sort by name </a></th>
+        <th>Actions</th>
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>
+            <a href="/python2/customers/{{ customer.id }}">
+                View {{ customer.name }} Profile
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

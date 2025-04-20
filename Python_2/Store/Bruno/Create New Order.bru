@@ -1,0 +1,22 @@
+meta {
+  name: Create New Order
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{base_url}}/api/orders
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "customer_phone": "234-667-8123",
+    "items": [
+      ["Eggs", 5],
+      ["Milk", 2],
+      ["Bread", 1]
+    ]
+  }
+}

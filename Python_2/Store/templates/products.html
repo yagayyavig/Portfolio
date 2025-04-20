@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h1>Available Products</h1>
+
+<!-- Sort Buttons -->
+<div style="margin-bottom: 1rem;">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name <a href="{{ url_for('list_products', sort='name') }}" class="btn">Sort by Name</a></th>
+            <th>Price <a href="{{ url_for('list_products', sort='price') }}" class="btn">Sort by Price</a></th>
+            <th>Stock <a href="{{ url_for('list_products', sort='available') }}" class="btn">Sort by Available</a></th>
+            <th>Category <a href="{{ url_for('list_products', sort='category') }}" class="btn">Sort by Category</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>${{ product.price }}</td>
+            <td>{{ product.available }}</td>
+            <td>
+              <a href="{{ url_for('category_detail', id=product.category.id) }}">
+                {{ product.category.name }}
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+
+{% endblock %}

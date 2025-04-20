@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Store{% endblock %}</title>
+    <link rel="stylesheet" href="/python2/static/style.css">
+    <style>
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transition: transform 0.2s ease, background 0.3s;
+            margin-right: 20px;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="back-btn">Back</a>
+            <a href="/python2/">Home</a>
+            <a href="/python2/products">Products</a>
+            <a href="/python2/categories">Categories</a>
+            <a href="/python2/customers">Customers</a>
+            <a href="/python2/orders">Orders</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block header %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+      
+    <footer>
+        <p>&copy; 2025 My Store Project OOP | Yagayya Vig</p>
+    </footer>
+</body>
+</html>

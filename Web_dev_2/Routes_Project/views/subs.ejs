@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title>Sub Groups</title>
+</head>
+<body>
+  <main>
+    <div class="authOptions">
+      <h1>Sub Groups</h1>
+      <a role="button" href="/posts">Home</a>
+    </div>
+
+    <ul>
+      <% subgroups.forEach(sub => { %>
+        <li>
+          <a href="/subs/show/<%= sub %>"><%= sub %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>

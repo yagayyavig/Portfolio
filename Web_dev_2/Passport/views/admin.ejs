@@ -1,0 +1,11 @@
+<% Object.keys(sessions).forEach(session => {
+    const s = sessions[session];
+    const user = s && s.passport && s.passport.user;
+%>
+ <div>
+   <p>Session ID: <%= session %></p>
+   <p>User ID: <%= user?.id || user || "Unknown" %></p>
+   <p>Name: <%= user?.name || "Unknown" %></p>
+   <p><a href="/deauth/<%= session %>">Revoke Session</a></p>
+ </div>
+<% }) %>

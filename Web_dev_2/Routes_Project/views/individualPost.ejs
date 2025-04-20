@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title><%= post.title %></title>
+</head>
+<body>
+  <main>
+    <h1><%= post.title %></h1>
+    <% if (post.link) { %>
+      <p><a href="<%= post.link %>" target="_blank">Visit Link</a></p>
+    <% } %>
+    <p><strong> Description:</strong> <%= post.description %></p>
+    <p><strong> Subgroup:</strong> <%= post.subgroup %></p>
+
+    <h2>Comments</h2>
+    <% if (post.comments.length === 0) { %>
+      <p>No comments yet. Be the first to comment!</p>
+    <% } %>
+    <ul>
+      <% post.comments.forEach(comment => { %> <!-- use comments with lowers c-->
+        <li>
+          <p><%= comment.description %></p>
+        </li>
+      <% }) %>
+    </ul>
+
+    <% if (user) { %>
+      <h3>Add a Comment</h3>
+      <form action="/posts/comment-create/<%= post.id %>" method="POST">
+        <textarea name="description" required></textarea>
+        <button type="submit">Comment</button>
+      </form>
+    <% } else { %>
+      <p><a href="/login">Login</a> to comment</p>
+    <% } %>
+
+    <form action="/posts/edit/<%= post.id %>" method="GET">
+      <button type="submit">Edit Post</button>
+    </form>
+    <!--delete post button -->
+    <form action="/posts/deleteconfirm/<%= post.id %>" method="GET">
+      <button type="submit">Delete Post</button>
+    </form> 
+
+      <p><a href="/posts">← Back to all posts</a></p>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Edit Post</title>
+  </head>
+  <body>
+    <main>
+      <div class="authOptions">
+        <h1>Edit Post</h1>
+        <a role="button" href="/posts">Home</a>
+      </div>
+
+      <% if (locals.error) { %>
+        <article style="background-color: #ffdddd; color: #ff0000; padding: 10px; margin-bottom: 15px;">
+          <%= error %>
+        </article>
+      <% } %>
+
+      <form action="/posts/edit/<%= post.id %>" method="POST">
+        <div>
+          <label for="title">Title</label>
+          <input 
+            type="text" 
+            id="title" 
+            name="title" 
+            placeholder="Enter post title" 
+            value="<%= formData && formData.title || post.title %>"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="link">Link</label>
+          <input 
+            type="text" 
+            id="link" 
+            name="link" 
+            placeholder="Enter post URL" 
+            value="<%= formData && formData.link || post.link %>"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="description">Description</label>
+          <textarea 
+            id="description" 
+            name="description" 
+            placeholder="Enter post description"
+            required
+          ><%= formData && formData.description || post.description %></textarea>
+        </div>
+
+        <div>
+          <label for="subgroup">Subgroup</label>
+          <input 
+            type="text" 
+            id="subgroup" 
+            name="subgroup" 
+            placeholder="Enter subgroup" 
+            value="<%= formData && formData.subgroup || post.subgroup %>"
+            required
+          >
+        </div>
+
+        <div>
+          <button type="submit">Update Post</button>
+          <a role="button" href="/posts/show/<%= post.id %>" class="secondary">Cancel</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

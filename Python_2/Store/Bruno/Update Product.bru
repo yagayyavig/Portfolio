@@ -1,0 +1,18 @@
+meta {
+  name: Update Product
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/api/products/tea
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "available": 150,
+    "price": 1.99
+  }
+}

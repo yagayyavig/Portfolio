@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <main>
+      <div class="authOptions">
+        <h1>Homepage</h1>
+        <% if (!user) { %>
+          <a role="button" href="/auth/login">Login</a>
+        <% } else { %>
+          <a role="button" href="/auth/logout">Logout</a>
+        <% } %>
+      </div>
+
+      <h2>Welcome, <%= user?.uname || "Visitor" %>.</h2>
+
+      <div>
+        <p>All Posts</p>
+        <% if (posts.length > 0) { %>
+          <% posts.forEach(post => { %>
+            <div class="individualPost">
+              <a href="/posts/show/<%= post.id %>"><%= post.title %></a>
+              <p><%= post.description %></p>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>No posts yet. Be the first to <a href="/posts/create">create one</a>!</p>
+        <% } %>
+      </div>
+
+      <div>
+        <a href="/subs/list">Subgroups</a>
+      </div>
+
+      <% if (user) { %>
+        <div>
+          <a role="button" href="/posts/create">Create Post</a>
+        </div>
+      <% } else { %>
+        <p>Please <a href="/auth/login">login</a> to make a post.</p>
+      <% } %>
+
+      <!-- ✅ Back to Homepage Button -->
+      <div style="margin-top: 2rem;">
+        <a role="button" class="secondary" href="/web2/">← Back to Homepage</a>
+      </div>
+    </main>
+  </body>
+</html>

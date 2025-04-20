@@ -1,0 +1,11 @@
+meta {
+  name: Get All Orders
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/api/orders
+  body: json
+  auth: inherit
+}

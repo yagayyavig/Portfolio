@@ -1,0 +1,8 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %> <% if (user.isAdmin) { %> 👑 <% } %></p>
+
+<a href="/auth/logout" class="btn btn-secondary">Logout</a>
+
+<% if (user.isAdmin) { %>
+  <a href="/admin" class="btn btn-warning ml-2">👑 Go to Admin Panel</a>
+<% } %>
