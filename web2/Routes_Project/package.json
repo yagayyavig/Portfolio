@@ -4,10 +4,10 @@
   "description": "bcit-term-project",
   "main": "app.js",
   "scripts": {
-    "start": "tsx watch --env-file=.env app.ts",
-    "db": "ignore-for-now",
-    "studio": "ignore-for-now"
-  },
+  "build": "tsc",
+  "start": "node dist/app.js"
+}
+,
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.8",
