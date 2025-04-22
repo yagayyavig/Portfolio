@@ -10,7 +10,7 @@ const githublogin = new GitHubStrategy(
   {
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://afe4-2001-569-5988-8700-18f6-293d-6c87-60c.ngrok-free.app/auth/github/callback"
+    callbackURL: "https://auth.yagayyaportfolio.xyz/auth/github/callback"
   },
   function (accessToken, refreshToken, profile, done) {
     const user = userController.getUserById(profile.id);
