@@ -3,7 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated, isAdmin } = require("../middleware/checkAuth");
 
 router.get("/", (req, res) => {
-  res.send("/auth/login");
+  res.redirect("/auth/login");
 });
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
