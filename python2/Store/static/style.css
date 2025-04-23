@@ -39,6 +39,34 @@ body {
   box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
 }
 
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+/* Filter Button Styling */
+.filter-btn {
+  background: #7e57c2;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #673ab7;
+  box-shadow: 0px 0px 10px #9575cd;
+  transform: scale(1.05);
+}
+
+
 /* Add back button responsive design */
 @media screen and (max-width: 480px) {
   .back-btn {

@@ -2,15 +2,13 @@
 
 {% block title %}Flask Store - Orders{% endblock %}
 
-{% block header %}All Orders{% endblock %}
-
 {% block content %}
 <h1>All Orders</h1>
 
-<div style="margin-bottom: 1rem;">
-    <a href="/python2/orders" class="btn">(All)</a>
-    <a href="/python2/orders?completed_after=2025.03/01@00:00&completed_before=2025.03/31@23:59" class="btn">March Completed</a>
-    <a href="/python2/orders?completed_after=2025.04/01@00:00&completed_before=2025.04/08@24:00" class="btn">April Completed</a>
+<div class="filter-buttons">
+    <a href="/python2/orders" class="filter-btn">(All)</a>
+    <a href="/python2/orders?completed_after=2025.03/01@00:00&completed_before=2025.03/31@23:59" class="filter-btn">March Completed</a>
+    <a href="/python2/orders?completed_after=2025.04/01@00:00&completed_before=2025.04/08@24:00" class="filter-btn">April Completed</a>
 </div>
 
 {% if orders %}
