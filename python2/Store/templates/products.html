@@ -11,10 +11,22 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Product Name <a href="{{ url_for('list_products', sort='name') }}" class="btn">Sort by Name</a></th>
-            <th>Price <a href="{{ url_for('list_products', sort='price') }}" class="btn">Sort by Price</a></th>
-            <th>Stock <a href="{{ url_for('list_products', sort='available') }}" class="btn">Sort by Available</a></th>
-            <th>Category <a href="{{ url_for('list_products', sort='category') }}" class="btn">Sort by Category</a></th>
+            <th>
+              Product Name 
+              <a href="/python2/products?sort=name" class="btn">Sort by Name</a>
+            </th>
+            <th>
+              Price 
+              <a href="/python2/products?sort=price" class="btn">Sort by Price</a>
+            </th>
+            <th>
+              Stock 
+              <a href="/python2/products?sort=available" class="btn">Sort by Available</a>
+            </th>
+            <th>
+              Category 
+              <a href="/python2/products?sort=category" class="btn">Sort by Category</a>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +37,7 @@
             <td>${{ product.price }}</td>
             <td>{{ product.available }}</td>
             <td>
-              <a href="{{ url_for('category_detail', id=product.category.id) }}">
+              <a href="/python2/categories/{{ product.category.id }}">
                 {{ product.category.name }}
               </a>
             </td>
@@ -33,6 +45,5 @@
           {% endfor %}
         </tbody>
       </table>
-      
-
+</div>
 {% endblock %}

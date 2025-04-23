@@ -5,63 +5,62 @@
 {% block header %}Order #{{ order.id }}{% endblock %}
 
 {% block content %}
-    <div>
-        <h2>Order Information</h2>
-        <p>
-            <strong>Customer:</strong> 
-            <a href="{{ url_for('customer_detail', id=order.customer.id) }}">
-                {{ order.customer.name }}
-            </a>
-        </p>
-        <p><strong>Created:</strong> {{ order.created.strftime('%Y-%m-%d %H:%M:%S') }}</p>
-        <p>
-            <strong>Status:</strong> 
-            {% if order.completed %}
-                Completed on {{ order.completed.strftime('%Y-%m-%d %H:%M:%S') }}
-            {% else %}
-                Pending
-            {% endif %}
-        </p>
+<div>
+    <h2>Order Information</h2>
+    <p>
+        <strong>Customer:</strong> 
+        <a href="{{ url_for('customer_detail', id=order.customer.id) }}">
+            {{ order.customer.name }}
+        </a>
+    </p>
+    <p><strong>Created:</strong> {{ order.created.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    <p>
+        <strong>Status:</strong> 
         {% if order.completed %}
-            <p><strong>Total Amount:</strong> ${{ order.amount }}</p>
+            Completed on {{ order.completed.strftime('%Y-%m-%d %H:%M:%S') }}
         {% else %}
-            <p><strong>Estimated Total:</strong> ${{ "%.2f"|format(order.estimate()) }}</p>
-            
-            <form method="post" action="{{ url_for('complete_order', id=order.id) }}">
-                <button type="submit">Complete Order</button>
-            </form>
+            Pending
         {% endif %}
-    </div>
-    
-    <h2>Order Items</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>In Stock</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in order.items %}
-            <tr>
-                <td>{{ item.product.name }}</td>
-                <td>${{ "%.2f"|format(item.product.price) }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>
-                    {% if not order.completed and item.quantity > item.product.available %}
-                        <span class="warning">{{ item.product.available }} (Not enough!)</span>
-                    {% else %}
-                        {{ item.product.available }}
-                    {% endif %}
-                </td>
-                <td>${{ "%.2f"|format(item.product.price * item.quantity) }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
-    <p><a href="{{ url_for('orders') }}">Back to Orders</a></p>
+    </p>
+    {% if order.completed %}
+        <p><strong>Total Amount:</strong> ${{ order.amount }}</p>
+    {% else %}
+        <p><strong>Estimated Total:</strong> ${{ "%.2f"|format(order.estimate()) }}</p>
+        <form method="post" action="{{ url_for('complete_order', id=order.id) }}">
+            <button type="submit">Complete Order</button>
+        </form>
+    {% endif %}
+</div>
+
+<h2>Order Items</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>In Stock</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in order.items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>${{ "%.2f"|format(item.product.price) }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+                {% if not order.completed and item.quantity > item.product.available %}
+                    <span class="warning">{{ item.product.available }} (Not enough!)</span>
+                {% else %}
+                    {{ item.product.available }}
+                {% endif %}
+            </td>
+            <td>${{ "%.2f"|format(item.product.price * item.quantity) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><a href="{{ url_for('orders') }}">Back to Orders</a></p>
 {% endblock %}

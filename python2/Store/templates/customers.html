@@ -7,8 +7,12 @@
 
 <table>
     <tr>
-        <th>ID <a href="/customers?sort=id" class="btn"> Sort by id</a></th>
-        <th>Name <a href="/customers?sort=name" class="btn"> Sort by name </a></th>
+        <th>ID 
+            <a href="/python2/customers?sort=id" class="btn">Sort by ID</a>
+        </th>
+        <th>Name 
+            <a href="/python2/customers?sort=name" class="btn">Sort by Name</a>
+        </th>
         <th>Actions</th>
     </tr>
     {% for customer in customers %}
@@ -17,11 +21,10 @@
         <td>{{ customer.name }}</td>
         <td>
             <a href="/python2/customers/{{ customer.id }}">
-                View {{ customer.name }} Profile
+                View Profile
             </a>
         </td>
     </tr>
     {% endfor %}
 </table>
-
 {% endblock %}

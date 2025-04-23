@@ -5,53 +5,53 @@
 {% block header %}All Orders{% endblock %}
 
 {% block content %}
-    <h1>All Orders</h1>
+<h1>All Orders</h1>
 
-    <div style="margin-bottom: 1rem;">
-        <a href="{{ url_for('orders') }}" class="btn">(All)</a>
-        <a href="{{ url_for('orders', completed_after='2025.03/01@00:00', completed_before='2025.03/31@23:59') }}" class="btn">March Completed</a>
-        <a href="{{ url_for('orders', completed_after='2025.04/01@00:00', completed_before='2025.04/08@24:00') }}" class="btn">April Completed</a>
-    </div>
+<div style="margin-bottom: 1rem;">
+    <a href="/python2/orders" class="btn">(All)</a>
+    <a href="/python2/orders?completed_after=2025.03/01@00:00&completed_before=2025.03/31@23:59" class="btn">March Completed</a>
+    <a href="/python2/orders?completed_after=2025.04/01@00:00&completed_before=2025.04/08@24:00" class="btn">April Completed</a>
+</div>
 
-    {% if orders %}
-    <table>
-        <thead>
-            <tr>
-                <th>Order ID <a href="{{ url_for('orders', sort='id') }}" class="btn">Sort by ID</a></th>
-                <th>Customer</th>
-                <th>Created <a href="{{ url_for('orders', sort='date') }}" class="btn">Sort by Date</a></th>
-                <th>Status 
-                    <a href="{{ url_for('orders', status='pending') }}" class="btn">Pending</a>
-                    <a href="{{ url_for('orders', status='completed') }}" class="btn">Completed</a>
-                </th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in orders %}
-            <tr class="{{ 'complete' if order.completed else 'pending' }}">
-                <td>{{ order.id }}</td>
-                <td>
-                    <a href="{{ url_for('customer_detail', id=order.customer.id) }}">
-                        {{ order.customer.name }}
-                    </a>
-                </td>
-                <td>{{ order.created.strftime('%Y-%m-%d %H:%M:%S') }}</td>
-                <td>
-                    {% if order.completed %}
-                        Completed on {{ order.completed.strftime('%Y-%m-%d %H:%M:%S') }}
-                    {% else %}
-                        Pending
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{{ url_for('order', id=order.id) }}">View Details</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-        <p>No orders found.</p>
-    {% endif %}
+{% if orders %}
+<table>
+    <thead>
+        <tr>
+            <th>Order ID <a href="/python2/orders?sort=id" class="btn">Sort by ID</a></th>
+            <th>Customer</th>
+            <th>Created <a href="/python2/orders?sort=date" class="btn">Sort by Date</a></th>
+            <th>Status 
+                <a href="/python2/orders?status=pending" class="btn">Pending</a>
+                <a href="/python2/orders?status=completed" class="btn">Completed</a>
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr class="{{ 'complete' if order.completed else 'pending' }}">
+            <td>{{ order.id }}</td>
+            <td>
+                <a href="/python2/customers/{{ order.customer.id }}">
+                    {{ order.customer.name }}
+                </a>
+            </td>
+            <td>{{ order.created.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td>
+                {% if order.completed %}
+                    Completed on {{ order.completed.strftime('%Y-%m-%d %H:%M:%S') }}
+                {% else %}
+                    Pending
+                {% endif %}
+            </td>
+            <td>
+                <a href="/python2/orders/{{ order.id }}">View Details</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No orders found.</p>
+{% endif %}
 {% endblock %}

@@ -5,19 +5,22 @@
 {% block content %}
 <h1>Product Categories</h1>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Category Name</th>
-        <th>Actions</th>
-    </tr>
-    {% for category in categories %}
-    <tr>
-        <td>{{ category.id }}</td>
-        <td>{{ category.name }}</td>
-        <td><a href="/python2/categories/{{ category.id }}">View Products</a></td>
-    </tr>
-    {% endfor %}
+<table role="grid" style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.id }}</td>
+            <td>{{ category.name }}</td>
+            <td><a href="/python2/categories/{{ category.id }}">View Products</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
-
 {% endblock %}

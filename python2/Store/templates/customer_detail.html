@@ -4,9 +4,13 @@
 
 {% block content %}
 <h1>Customer Profile</h1>
-<p><strong>Name:</strong> {{ customer.name }}</p>
-<p><strong>Phone:</strong> {{ customer.phone }}</p>
+
+<div style="margin-bottom: 1rem;">
+  <p><strong>Name:</strong> {{ customer.name }}</p>
+  <p><strong>Phone:</strong> {{ customer.phone }}</p>
+</div>
+
 <a href="/python2/customers">
-    <button>Back to Customers</button>
+  <button class="secondary">← Back to Customers</button>
 </a>
 {% endblock %}
