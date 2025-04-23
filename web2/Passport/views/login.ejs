@@ -29,7 +29,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      padding: 1rem;
     }
 
     body::before {
@@ -48,14 +48,13 @@
       flex-direction: column;
       align-items: center;
       background: rgba(10, 10, 10, 0.9);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
       backdrop-filter: blur(6px);
-      max-width: 500px;
-      width: 90%;
+      max-width: 450px;
+      width: 100%;
       text-align: center;
-      margin: 2rem;
     }
 
     .card img {
@@ -66,13 +65,19 @@
     h2 {
       margin-bottom: 1.5rem;
       color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    form {
+      width: 100%;
+      max-width: 350px;
     }
 
     label {
       display: block;
       text-align: left;
       margin: 0.5rem 0 0.25rem;
-      color: var(--text);
+      font-size: 0.9rem;
     }
 
     input {
@@ -83,6 +88,7 @@
       border-radius: 5px;
       background: rgba(255, 255, 255, 0.1);
       color: var(--text);
+      font-size: 0.9rem;
     }
 
     input::placeholder {
@@ -91,13 +97,13 @@
 
     button {
       width: 100%;
-      padding: 0.75rem;
+      padding: 0.65rem;
       border: none;
       border-radius: 6px;
       font-weight: bold;
-      margin-top: 0.5rem;
       cursor: pointer;
       transition: 0.3s ease;
+      font-size: 0.95rem;
     }
 
     .btn-primary {
@@ -114,6 +120,7 @@
     .btn-dark {
       background-color: #222;
       color: white;
+      margin-top: 0.5rem;
     }
 
     .btn-dark:hover {
@@ -124,6 +131,7 @@
     p {
       margin-top: 1rem;
       color: #a9cfe3;
+      font-size: 0.85rem;
     }
 
     a {
@@ -135,9 +143,38 @@
       text-shadow: 0 0 5px var(--accent);
     }
 
-    form {
-      width: 100%;
-      max-width: 400px;
+    h5 {
+      margin: 1rem 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      form {
+        max-width: 100%;
+      }
+
+      input, button {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      .card img {
+        width: 50px;
+      }
     }
   </style>
 </head>
@@ -148,15 +185,15 @@
 
     <form action="/auth/login" method="POST">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter Email" />
+      <input type="email" id="email" name="email" placeholder="Enter Email" required/>
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter Password" />
+      <input type="password" id="password" name="password" placeholder="Enter Password" required/>
 
       <button type="submit" class="btn-primary">Login</button>
     </form>
 
-    <h5 style="margin: 1.5rem 0;">OR</h5>
+    <h5>OR</h5>
 
     <form action="/auth/github" method="GET">
       <button type="submit" class="btn-dark">
@@ -167,7 +204,9 @@
     <p>New User? <a href="/auth/register">Register</a></p>
     <p>Forgot Password? <a href="/auth/forgot">Reset</a></p>
 
-    <p> Have not setup register and reset buttons yet. </p>
+    <p style="margin-top: 1rem; color:#666; font-size:0.8rem;">
+      Have not setup register and reset buttons yet.
+    </p>
   </div>
 </body>
 </html>
