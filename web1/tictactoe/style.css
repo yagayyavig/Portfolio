@@ -1,191 +1,134 @@
 body {
-  background: url('./image.png') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-header {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
-  font-size: 1.8rem;
-  color: #ff4444;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
-  width: 100%;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(80px, 120px));
-  gap: 8px;
-  justify-content: center;
-  margin-top: 30px;
-  padding: 15px;
-}
-
-.cell {
-  background: #a8d8ff;
-  border: 3px solid #ff4444;
-  border-radius: 12px;
-  height: 0;
-  padding-bottom: 100%; /* square cells */
-  font-size: 2rem;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
-  transition: 0.3s ease;
-  user-select: none;
-  position: relative;
-}
-
-.cell:hover {
-  transform: scale(1.05);
-  background: #cce7ff;
-  box-shadow: 0 0 16px rgba(255, 68, 68, 0.7);
-}
-
-.cell::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.status {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #00ffcc;
-  text-shadow: 0 0 8px #00ffcc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
-
-.restart-btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: #ff4444;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
-}
-
-.restart-btn:hover {
-  transform: scale(1.05);
-  background: #ff6666;
-  box-shadow: 0 0 16px rgba(255, 68, 68, 0.8);
-}
-
-footer {
-  margin-top: 30px;
-  color: #eee;
-  font-size: 0.85rem;
-  width: 100%;
-  padding-bottom: 20px;
-}
-
-.x::before,
-.o::before {
-  font-size: 2.5rem;  /* Slightly larger emojis for better visibility */
-}
-
-.back-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  transition: transform 0.2s ease, background 0.3s;
-}
-
-.back-btn:hover {
-  background: linear-gradient(135deg, #ff4b2b, #ff416c);
-  transform: scale(1.05);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    background: url('./image.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   header {
-      font-size: 1.6rem;
-      padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    font-size: 2rem;
+    color: #ff4444;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+    width: 100%;
   }
-
+  
   .board {
-      grid-template-columns: repeat(3, minmax(60px, 80px));
-      gap: 6px;
-      margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 20px;
   }
-
-  .status {
-      font-size: 1rem;
-  }
-
-  .restart-btn {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-  }
-
+  
   .cell {
-      border-radius: 10px;
+    background: #a8d8ff;  /* Light ice blue */
+    border: 3px solid #ff4444;  /* Festive red border */
+    border-radius: 15px;
+    height: 120px;
+    font-size: 2.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);  /* Red glow */
+    transition: 0.3s ease;
+    user-select: none;
   }
-
-  .x::before,
-  .o::before {
-      font-size: 1.8rem;
+  
+  .cell:hover {
+    transform: scale(1.05);
+    background: #cce7ff;  /* Lighter ice blue on hover */
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.7);  /* Stronger red glow */
   }
-}
-
-@media (max-width: 480px) {
-  header {
-      font-size: 1.4rem;
-      padding: 0.6rem;
-  }
-
-  .board {
-      grid-template-columns: repeat(3, minmax(50px, 65px));
-      gap: 5px;
-      margin-top: 20px;
-  }
-
+  
   .status {
-      font-size: 0.9rem;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #00ffcc;
+    text-shadow: 0px 0px 8px #00ffcc;
   }
-
+  
   .restart-btn {
-      font-size: 0.85rem;
-      padding: 6px 12px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background: #ff4444;  /* Festive red */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
   }
-
-  .x::before,
+  
+  .restart-btn:hover {
+    transform: scale(1.05);
+    background: #ff6666;  /* Lighter red on hover */
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+  }
+  
+  footer {
+    margin-top: 40px;
+    color: #eee;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  .x::before {
+    content: "🎅";
+    font-size: 2.5rem;
+  }
+  
   .o::before {
-      font-size: 1.5rem;
+    content: "🎄";
+    font-size: 2.5rem;
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    transition: transform 0.2s ease, background 0.3s;
   }
 
-  .back-btn {
-      font-size: 0.8rem;
-      padding: 6px 10px;
+  .back-btn:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
   }
-}
+  
+  .back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    transition: transform 0.2s ease, background 0.3s;
+  }
+
+  .back-btn:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+  }
+  
