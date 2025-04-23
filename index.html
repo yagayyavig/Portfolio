@@ -149,6 +149,7 @@
       gap: 15px;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+      z-index: 999; /* Ensure nav is above content but below dropdown */
       animation: fadeIn 0.5s ease-out 0.2s backwards;
     }
 
@@ -166,7 +167,7 @@
       min-width: 200px;
       border-radius: 8px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      z-index: 1000; /* Increased z-index */
       backdrop-filter: blur(10px);
       border: 1px solid rgba(0, 191, 255, 0.1);
     }
@@ -230,7 +231,9 @@
       border-color: transparent;
     }
   
-    .center-box {
+    .center-box, .card, .main-content {
+      position: relative;
+      z-index: 1; /* Lower z-index than nav and dropdown */
       flex-grow: 1;
       display: flex;
       justify-content: center;
