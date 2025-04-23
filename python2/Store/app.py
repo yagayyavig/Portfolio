@@ -124,6 +124,4 @@ def complete_order(id):
     except ValueError as e:
         return render_template("error.html", message=f"{e}"), 409
 
-if __name__ == "__main__":
-    app.run(debug=True, port=8888)
 
