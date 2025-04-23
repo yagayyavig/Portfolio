@@ -57,13 +57,23 @@ header {
 
 .cell::before {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .status {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 1.2rem;
   color: #00ffcc;
   text-shadow: 0 0 8px #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .restart-btn {
@@ -93,14 +103,9 @@ footer {
   padding-bottom: 20px;
 }
 
-.x::before {
-  content: "🎅";
-  font-size: 2rem;
-}
-
+.x::before,
 .o::before {
-  content: "🎄";
-  font-size: 2rem;
+  font-size: 2.5rem;  /* Slightly larger emojis for better visibility */
 }
 
 .back-btn {
