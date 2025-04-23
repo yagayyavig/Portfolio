@@ -4,7 +4,7 @@ from pathlib import Path
 from datetime import datetime
 from models import Product, Category, Customer, Order, ProductOrder
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__, static_url_path="/python2/static")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///store.db"
 app.config["APPLICATION_ROOT"] = "/python2/"
 app.instance_path = Path(".").resolve()
@@ -13,11 +13,11 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-@app.route("/")
+@app.route("/python2/")
 def home():
     return render_template("home.html")
 
-@app.route("/products")
+@app.route("/python2/products")
 def list_products():
     sort = request.args.get("sort")
     statement = db.select(Product)
@@ -34,12 +34,12 @@ def list_products():
     products = db.session.execute(statement).scalars()
     return render_template("products.html", products=products)
 
-@app.route("/categories")
+@app.route("/python2/categories")
 def list_categories():
     categories = db.session.execute(db.select(Category)).scalars()
     return render_template("categories.html", categories=categories)
 
-@app.route("/categories/<int:id>")
+@app.route("/python2/categories/<int:id>")
 def category_detail(id):
     category = db.session.execute(db.select(Category).where(Category.id == id)).scalar_one_or_none()
     if category:
@@ -47,7 +47,7 @@ def category_detail(id):
         return render_template("category_detail.html", category=category, products=products)
     return "Category Not Found", 404
 
-@app.route("/customers")
+@app.route("/python2/customers")
 def list_customers():
     sort = request.args.get("sort")
     statement = db.select(Customer)
@@ -60,14 +60,14 @@ def list_customers():
     customers = db.session.execute(statement).scalars().all()
     return render_template("customers.html", customers=customers)
 
-@app.route("/customers/<int:id>")
+@app.route("/python2/customers/<int:id>")
 def customer_detail(id):
     customer = db.session.execute(db.select(Customer).where(Customer.id == id)).scalar_one_or_none()
     if customer:
         return render_template("customer_detail.html", customer=customer)
     return "Customer Not Found", 404
 
-@app.route("/orders")
+@app.route("/python2/orders")
 def orders():
     sort = request.args.get("sort")
     status = request.args.get("status")
@@ -103,14 +103,14 @@ def orders():
     orders_list = db.session.execute(statement).scalars().all()
     return render_template("orders.html", orders=orders_list)
 
-@app.route("/orders/<int:id>")
+@app.route("/python2/orders/<int:id>")
 def order(id):
     order_obj = db.session.execute(db.select(Order).where(Order.id == id)).scalar_one_or_none()
     if not order_obj:
         return render_template("error.html", message=f"Order with ID {id} not found"), 404
     return render_template("orders_detail.html", order=order_obj)
 
-@app.route("/orders/<int:id>/complete", methods=["POST"])
+@app.route("/python2/orders/<int:id>/complete", methods=["POST"])
 def complete_order(id):
     order_obj = db.session.execute(db.select(Order).where(Order.id == id)).scalar_one_or_none()
     if not order_obj:
@@ -124,4 +124,5 @@ def complete_order(id):
     except ValueError as e:
         return render_template("error.html", message=f"{e}"), 409
 
-
+if __name__ == "__main__":
+    app.run(debug=True, port=8888)
