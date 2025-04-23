@@ -7,7 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Same nav and structure as term1.html -->
+    <header>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            
+            <div class="dropdown">
+                <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
+                <div class="dropdown-content">
+                    <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
+                <div class="dropdown-content">
+                    <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
+                    <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
+                </div>
+            </div>
+
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
     <main class="main-content">
         <div class="term-container">
             <h1>Term 2 Overview</h1>
@@ -16,49 +38,632 @@
                     <div class="course-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h2>Web Development 2</h2>
-                    <p>Advanced web development focusing on full-stack applications:</p>
-                    <ul>
+                    <h2 class="course-title">Web Development 2</h2>
+                    <p class="course-description">Advanced web development focusing on full-stack applications:</p>
+                    <ul class="course-list">
                         <li>🛂 Authentication with Passport.js</li>
                         <li>💬 Express Routes Project</li>
                         <li>TypeScript Integration</li>
                         <li>RESTful APIs</li>
                     </ul>
-                    <a href="/web2" class="view-projects">View Projects</a>
+                    <a href="/web2" class="view-projects-btn">View Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="course-card">
                     <div class="course-icon">
-                        <i class="fas fa-flask"></i>
+                        <i class="fas fa-python"></i>
                     </div>
-                    <h2>Python Term 2</h2>
-                    <p>Advanced Python development with Flask:</p>
-                    <ul>
-                        <li>Web Applications with Flask</li>
-                        <li>Database Integration</li>
-                        <li>API Development</li>
-                        <li>Authentication & Authorization</li>
+                    <h2 class="course-title">Object Oriented Programming</h2>
+                    <p class="course-description">Advanced Python development with OOP:</p>
+                    <ul class="course-list">
+                        <li>Classes & Objects</li>
+                        <li>Inheritance & Polymorphism</li>
+                        <li>HTTP APIs</li>
+                        <li>GUI Development</li>
                     </ul>
-                    <a href="https://python-udgu.onrender.com/python2/" class="view-projects">View Projects</a>
+                    <a href="https://python-udgu.onrender.com/python2/" class="view-projects-btn">View Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="course-card">
                     <div class="course-icon">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-terminal"></i>
                     </div>
-                    <h2>Database Systems</h2>
-                    <p>Working with databases and data management:</p>
-                    <ul>
-                        <li>SQL & Database Design</li>
-                        <li>Data Modeling</li>
-                        <li>Query Optimization</li>
-                        <li>Database Administration</li>
+                    <h2 class="course-title">Linux System Administration</h2>
+                    <p class="course-description">System administration using Linux:</p>
+                    <ul class="course-list">
+                        <li>System Installation & Configuration</li>
+                        <li>User Management</li>
+                        <li>Server Services</li>
+                        <li>System Monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h2 class="course-title">Enterprise Networking</h2>
+                    <p class="course-description">Core networking concepts and implementation:</p>
+                    <ul class="course-list">
+                        <li>Network Protocols</li>
+                        <li>TCP/IP & OSI Model</li>
+                        <li>Switching & Routing</li>
+                        <li>Network Services</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h2 class="course-title">Business Systems Analysis</h2>
+                    <p class="course-description">System analysis and design concepts:</p>
+                    <ul class="course-list">
+                        <li>Requirements Analysis</li>
+                        <li>Process Modeling</li>
+                        <li>Object-Oriented Design</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h2 class="course-title">Business Communications 2</h2>
+                    <p class="course-description">Professional communication skills:</p>
+                    <ul class="course-list">
+                        <li>Technical Writing</li>
+                        <li>Job Search Documents</li>
+                        <li>Presentations</li>
+                        <li>Group Communication</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h2 class="course-title">Statistics for IT</h2>
+                    <p class="course-description">Statistical analysis for technology:</p>
+                    <ul class="course-list">
+                        <li>Probability & Distribution</li>
+                        <li>Data Analysis</li>
+                        <li>Hypothesis Testing</li>
+                        <li>Regression Analysis</li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Same footer and styles as term1.html -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Yagayya Projects</p>
+        </div>
+    </footer>
+
+    <style>
+        :root {
+            --accent: #00bfff;
+            --hover: #007acc;
+            --text: #e0f7fa;
+            --bg-black: #000000;
+            --card-bg: rgba(10, 10, 10, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-black);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Enhanced gradient background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: rgba(10, 10, 10, 0.85);
+            color: var(--accent);
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 15px rgba(0, 191, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a:hover {
+            background: var(--hover);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(10, 10, 10, 0.95);
+            min-width: 200px;
+            border-radius: 12px;
+            padding: 0.5rem;
+            box-shadow: 0 8px 32px rgba(0, 191, 255, 0.2);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            margin: 0.3rem;
+            border-radius: 8px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .term-container {
+            padding: 2rem;
+        }
+
+        .term-container h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--accent), #80dfff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        /* Card Styles */
+        .course-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            border: var(--card-border);
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .course-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .course-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .course-description {
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .course-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .course-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .view-projects-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: var(--bg-black);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .view-projects-btn:hover {
+            background: var(--hover);
+            color: var(--text);
+            transform: translateX(5px);
+        }
+
+        /* Footer Styles from term1.html */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem;
+            text-align: center;
+            color: var(--accent);
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 191, 255, 0.1);
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(0, 191, 255, 0.5); }
+            to { text-shadow: 0 0 20px rgba(0, 191, 255, 0.8); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .term-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .term-container h1 {
+                font-size: 2rem;
+            }
+
+            .course-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .term-container {
+                padding: 1rem;
+            }
+
+            .course-card {
+                padding: 1.25rem;
+            }
+
+            .course-title {
+                font-size: 1.25rem;
+            }
+
+            .view-projects-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e0f7fa;
+                --bg-black: #000000;
+                --card-bg: rgba(10, 10, 10, 0.9);
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Responsive styles for nav and footer */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5rem;
+                padding: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 0.7rem 1.4rem;
+            }
+
+            .dropdown-content {
+                width: 100%;
+                position: relative;
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+
+            footer {
+                padding: 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Base responsive settings */
+        @media (max-width: 1200px) {
+            .term-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            nav a, .dropdown-content a {
+                width: 100%;
+                text-align: center;
+                padding: 0.7rem 1rem;
+            }
+
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .term-container {
+                padding: 1rem;
+            }
+
+            .card, .course-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 0.8rem;
+            }
+
+            header {
+                padding: 0.8rem;
+            }
+
+            .term-container h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .card, .course-card {
+                padding: 1.25rem;
+            }
+
+            footer {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .card:hover, .course-card:hover {
+                transform: none;
+            }
+
+            nav a, .dropdown-content a {
+                padding: 0.8rem 1.2rem; /* Larger touch targets */
+            }
+        }
+
+        /* Ensure minimum touch target sizes */
+        nav a, 
+        .dropdown-content a, 
+        button,
+        .card,
+        .course-card {
+            min-height: 44px; /* iOS minimum */
+            min-width: 44px;
+        }
+
+        /* Landscape mode adjustments */
+        @media screen and (max-height: 600px) and (orientation: landscape) {
+            .main-content {
+                margin-top: 0.5rem;
+            }
+
+            header {
+                padding: 0.5rem;
+            }
+
+            .term-container {
+                padding-top: 0.5rem;
+            }
+        }
+
+        /* High DPI screens */
+        @media (-webkit-min-device-pixel-ratio: 2), 
+               (min-resolution: 192dpi) {
+            .card, .course-card {
+                box-shadow: 0 0 15px rgba(0, 191, 255, 0.15);
+            }
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .card, .course-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            nav, footer {
+                display: none;
+            }
+        }
+    </style>
 </body>
 </html>
+
+

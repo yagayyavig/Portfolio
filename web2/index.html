@@ -235,6 +235,44 @@
         font-size: 0.8rem;
       }
     }
+
+    /* Web2 index.html responsive styles */
+    @media (max-width: 768px) {
+      .card {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .project-list a {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.25rem;
+        margin: 0.8rem;
+      }
+
+      .project-list a {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .project-list a span:first-child {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>

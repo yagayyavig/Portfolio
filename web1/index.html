@@ -239,6 +239,42 @@
         font-size: 0.8rem;
       }
     }
+
+    /* Web1 index.html responsive styles */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .project-list a {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0.8rem;
+      }
+
+      .project-list a {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .project-list a span:first-child {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
