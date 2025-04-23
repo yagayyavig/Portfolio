@@ -443,3 +443,33 @@ button,
 }
 
 
+footer {
+    background: rgba(20, 20, 20, 0.7);
+    padding: 1rem;
+    text-align: center;
+    color: white; /* Changed to white */
+    font-size: 0.9rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Updated border color to match */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+}
+
+footer small {
+    color: white; /* Ensure small text is also white */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+footer small:hover {
+    opacity: 1;
+}
+
+footer:hover {
+    background: rgba(20, 20, 20, 0.85);
+}
