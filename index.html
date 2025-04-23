@@ -501,7 +501,7 @@
   // For mobile devices
   document.querySelectorAll('.dropbtn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
+      // Don't prevent default here - allow the link to work
       const dropdown = btn.parentElement;
       dropdown.classList.toggle('active');
       
