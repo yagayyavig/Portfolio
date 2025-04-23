@@ -5,14 +5,14 @@ import {
   getUserById,
 } from "../controller/userController";
 
-// Yagayya 
+// Define User interface for session
 interface User {
   id: number;
   uname: string;
   password: string;
 }
 
-// Local strategy login
+// Setup Local Strategy
 const localLogin = new LocalStrategy(
   {
     usernameField: "uname",
@@ -23,7 +23,7 @@ const localLogin = new LocalStrategy(
       const user = await getUserByEmailIdAndPassword(uname, password);
       if (!user) {
         return done(null, false, {
-          message: "Your login details are not valid. Please try again.",
+          message: "Invalid login. Please check your credentials.",
         });
       }
       return done(null, user);
@@ -33,17 +33,17 @@ const localLogin = new LocalStrategy(
   }
 );
 
-// Serialize user for the session
+// Serialize user to store in session
 passport.serializeUser<number>((user: User, done) => {
   done(null, user.id);
 });
 
-// Deserialize user from the session
+// Deserialize user by ID stored in session
 passport.deserializeUser<number>(async (id: number, done) => {
   try {
     const user = await getUserById(id);
     if (!user) {
-      return done({ message: "User not found" }, null);
+      return done(new Error("User not found"), null);
     }
     return done(null, user);
   } catch (err) {
@@ -51,4 +51,5 @@ passport.deserializeUser<number>(async (id: number, done) => {
   }
 });
 
+// Export the strategy setup
 export default passport.use(localLogin);

@@ -11,13 +11,15 @@
   <main>
     <div class="authOptions">
       <h1>Sub Groups</h1>
-      <a role="button" href="/web2/posts">Home</a>
+      <!-- ✅ FIXED -->
+      <a role="button" href="/posts">Home</a>
     </div>
 
     <ul>
       <% subgroups.forEach(sub => { %>
         <li>
-          <a href="/web2/subs/show/<%= sub %>"><%= sub %></a>
+          <!-- ✅ FIXED -->
+          <a href="/subs/show/<%= sub %>"><%= sub %></a>
         </li>
       <% }) %>
     </ul>

@@ -15,11 +15,11 @@
     <main>
       <div class="authOptions">
         <h1>Create Post</h1>
-        <a role="button" href="/web2/posts">Home</a>
+        <!-- ✅ FIXED -->
+        <a role="button" href="/posts">Home</a>
       </div>
 
-<!--Yagayya-->
-      <form action="/web2/posts/create" method="POST">
+      <form action="/posts/create" method="POST">
         <div>
           <label for="title">Title</label>
           <input 
@@ -31,7 +31,6 @@
             required
           >
         </div>
-<!--Yagayya-->
 
         <div>
           <label for="link">Link</label>
@@ -44,7 +43,6 @@
           >
         </div>
 
-<!--Yagayya-->
         <div>
           <label for="description">Description</label>
           <textarea 
@@ -54,8 +52,6 @@
             required
           ><%= locals.formData && formData.description || '' %></textarea>
         </div>
-
-<!--Yagayya-->
 
         <div>
           <label for="subgroup">Subgroup</label>
@@ -69,9 +65,6 @@
           >
         </div>
 
-<!--Yagayya-->
-
-        <!-- Hidden input for creator -->
         <input 
           type="hidden" 
           name="creator" 

@@ -3,8 +3,6 @@ const router = express.Router();
 import { ensureAuthenticated } from "../middleware/checkAuth";
 import { getPosts, getPost, addPost, editPost, deletePost, addComment, posts } from "../fake-db";
 
-const BASE_PATH = "/web2";
-
 router.get("/", async (req, res) => {
   const posts = getPosts(20);
   const user = req.user;
@@ -28,7 +26,7 @@ router.post("/create", ensureAuthenticated, async (req, res) => {
     }
 
     addPost(title, link, creator, description, subgroup);
-    res.redirect(`${BASE_PATH}/posts`);
+    res.redirect("/posts");
   } catch (err) {
     console.error("There is an error", err);
     res.render("createPosts", {
@@ -118,7 +116,7 @@ router.post("/edit/:postid", ensureAuthenticated, async (req, res) => {
   }
 
   editPost(postId, { title, link, description, subgroup });
-  res.redirect(`${BASE_PATH}/posts/show/${postId}`);
+  res.redirect(`/posts/show/${postId}`);
 });
 
 router.get("/deleteconfirm/:postid", ensureAuthenticated, async (req, res) => {
@@ -161,7 +159,7 @@ router.post("/delete/:postid", ensureAuthenticated, async (req, res) => {
   }
 
   deletePost(postId);
-  return res.redirect(`${BASE_PATH}/posts`);
+  return res.redirect("/posts");
 });
 
 router.post("/comment-create/:postid", ensureAuthenticated, (req, res) => {
@@ -176,7 +174,7 @@ router.post("/comment-create/:postid", ensureAuthenticated, (req, res) => {
   }
 
   addComment(postId, (req.user as any).id, req.body.description);
-  res.redirect(`${BASE_PATH}/posts/show/${postId}`);
+  res.redirect(`/posts/show/${postId}`);
 });
 
 export default router;

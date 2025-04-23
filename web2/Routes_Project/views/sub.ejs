@@ -11,8 +11,9 @@
   <main>
     <div class="authOptions">
       <h1>Posts in: <%= subname %></h1>
-      <a role="button" href="/web2/subs/list">← Back to Sub List</a>
-      <a role="button" href="/web2/posts">All Posts</a>
+      <!-- ✅ FIXED -->
+      <a role="button" href="/subs/list">← Back to Sub List</a>
+      <a role="button" href="/posts">All Posts</a>
     </div>
 
     <% if (posts.length === 0) { %>
@@ -21,7 +22,8 @@
       <ul>
         <% posts.forEach(post => { %>
           <li>
-            <a href="/web2/posts/show/<%= post.id %>"><%= post.title %></a><br>
+            <!-- ✅ FIXED -->
+            <a href="/posts/show/<%= post.id %>"><%= post.title %></a><br>
             <small>By <%= post.creator.uname %> | <%= new Date(post.timestamp).toLocaleString() %></small>
           </li>
         <% }) %>

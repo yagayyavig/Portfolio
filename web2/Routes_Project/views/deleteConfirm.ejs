@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
-        <link href="/css/style.css" rel="stylesheet" />
-        <title>Confirm Delete </title>
-    </head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Confirm Delete</title>
+  </head>
+  <body>
     <h1>Are you sure you want to delete this post?</h1>
 
     <div>
-        <p><strong>Title:</strong> <%= post.title %></p>
-        <p><strong>Description:</strong> <%= post.description %></p>
-        <p><strong>Creator:</strong> <%= post.creator %></p>
-        <p><strong>Subgroup:</strong> <%= post.subgroup %></p>
-        
+      <p><strong>Title:</strong> <%= post.title %></p>
+      <p><strong>Description:</strong> <%= post.description %></p>
+      <p><strong>Creator:</strong> <%= post.creator %></p>
+      <p><strong>Subgroup:</strong> <%= post.subgroup %></p>
     </div>
 
-    <form action="/web2/posts/delete/<%= post.id %>" method="POST"> <!-- changed from deleteConfirm to delete-->
-        <button type="submit">Confirm</button>
+    <!-- ✅ FIXED: No /web2 -->
+    <form action="/posts/delete/<%= post.id %>" method="POST">
+      <button type="submit">Confirm</button>
     </form>
-    
-    <a href="/web2/posts">Cancel</a> <!--if user dont want to delete it sends them back to the post page-->
 
-
-</body>
+    <!-- ✅ FIXED: Cancel redirects correctly -->
+    <a href="/posts">Cancel</a>
+  </body>
 </html>

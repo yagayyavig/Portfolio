@@ -1,6 +1,7 @@
 import express from "express";
 import passport from "../middleware/passport";
 const router = express.Router();
+
 const devMode = process.env.MODE === "dev";
 
 router.get("/login", async (req, res) => {
@@ -10,8 +11,8 @@ router.get("/login", async (req, res) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/web2/posts",
-    failureRedirect: "/web2/auth/login",
+    successRedirect: "/posts",      // ✅ FIXED
+    failureRedirect: "/auth/login", // ✅ FIXED
   })
 );
 
@@ -21,6 +22,5 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
-
 
 export default router;

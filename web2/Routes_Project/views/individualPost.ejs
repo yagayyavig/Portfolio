@@ -21,7 +21,7 @@
       <p>No comments yet. Be the first to comment!</p>
     <% } %>
     <ul>
-      <% post.comments.forEach(comment => { %> <!-- use comments with lowers c-->
+      <% post.comments.forEach(comment => { %>
         <li>
           <p><%= comment.description %></p>
         </li>
@@ -30,24 +30,26 @@
 
     <% if (user) { %>
       <h3>Add a Comment</h3>
-      <form action="/web2/posts/comment-create/<%= post.id %>" method="POST">
+      <!-- ✅ FIXED -->
+      <form action="/posts/comment-create/<%= post.id %>" method="POST">
         <textarea name="description" required></textarea>
         <button type="submit">Comment</button>
       </form>
     <% } else { %>
-      <p><a href="/web2/login">Login</a> to comment</p>
+      <!-- ✅ FIXED -->
+      <p><a href="/auth/login">Login</a> to comment</p>
     <% } %>
 
-    <form action="/web2/posts/edit/<%= post.id %>" method="GET">
+    <!-- ✅ FIXED -->
+    <form action="/posts/edit/<%= post.id %>" method="GET">
       <button type="submit">Edit Post</button>
     </form>
-    <!--delete post button -->
-    <form action="/web2/posts/deleteconfirm/<%= post.id %>" method="GET">
+
+    <form action="/posts/deleteconfirm/<%= post.id %>" method="GET">
       <button type="submit">Delete Post</button>
     </form> 
 
-      <p><a href="/web2/posts">← Back to all posts</a></p>
-
+    <p><a href="/posts">← Back to all posts</a></p>
   </main>
 </body>
 </html>
