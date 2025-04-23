@@ -11,24 +11,156 @@
         <nav>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
             
-                <div class="dropdown">
-                  <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
-                  <div class="dropdown-content">
+            <div class="dropdown">
+                <a href="term1.html" class="dropbtn" onclick="return false;"><i class="fas fa-book"></i> Term 1</a>
+                <div class="dropdown-content">
                     <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
-                  </div>
                 </div>
+            </div>
             
-                <div class="dropdown">
-                  <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
-                  <div class="dropdown-content">
+            <div class="dropdown">
+                <a href="term2.html" class="dropbtn" onclick="return false;"><i class="fas fa-laptop-code"></i> Term 2</a>
+                <div class="dropdown-content">
                     <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
                     <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
-                  </div>
                 </div>
+            </div>
             
-                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
     </header>
+
+    <style>
+        nav {
+            background: rgba(20, 20, 20, 0.9);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.75rem;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+            z-index: 999;
+            animation: fadeIn 0.5s ease-out 0.2s backwards;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(20, 20, 20, 0.95);
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a:hover {
+            background: var(--hover);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            nav a, .dropdown-content a {
+                width: 100%;
+                text-align: center;
+                padding: 0.7rem 1rem;
+            }
+
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Touch-friendly targets */
+        @media (hover: none) {
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+    </style>
+
+    <script>
+        // Add animation classes on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('header').classList.add('animate-slideDown');
+            document.querySelector('nav').classList.add('animate-fadeIn');
+        });
+
+        // For mobile devices
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Only prevent default and handle dropdown on mobile
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = btn.parentElement;
+                    dropdown.classList.toggle('active');
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        if (d !== dropdown) d.classList.remove('active');
+                    });
+                } else {
+                    // On desktop, navigate to the href
+                    window.location.href = btn.getAttribute('href');
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.matches('.dropbtn')) {
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    d.classList.remove('active');
+                });
+            }
+        });
+    </script>
 
     <div class="video-background">
         <video autoplay loop muted playsinline>
@@ -286,6 +418,7 @@
             height: 100vh;
             z-index: -1;
             overflow: hidden;
+            will-change: transform; /* Add for better performance */
         }
 
         .video-background video {
@@ -299,6 +432,38 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             opacity: 0.4;
+            /* Add for mobile performance */
+            @media (max-width: 768px) {
+                display: none; /* Optional: Hide video on mobile for better performance */
+            }
+        }
+
+        /* Add a fallback background for mobile */
+        @media (max-width: 768px) {
+            .video-background {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.9),
+                    rgba(0, 0, 0, 0.7)
+                );
+            }
+        }
+
+        /* Fix potential scrolling issues on iOS */
+        html, body {
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+        }
+
+        /* Improve touch response on mobile */
+        @media (max-width: 768px) {
+            .form-group input,
+            .form-group textarea,
+            button {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
         }
 
         .video-overlay {
