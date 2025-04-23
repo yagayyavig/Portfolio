@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Store{% endblock %}</title>
-    <link rel="stylesheet" href="/python2/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         .back-btn {
             text-decoration: none;
@@ -26,7 +26,7 @@
 <body>
     <header>
         <nav>
-            <a href="/" class="back-btn">Back</a>
+            <a href="/python2/" class="back-btn">Back</a>
             <a href="/python2/">Home</a>
             <a href="/python2/products">Products</a>
             <a href="/python2/categories">Categories</a>
