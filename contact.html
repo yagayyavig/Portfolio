@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact | Yagayya Vig</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Term 1 </a>
+                <div class="dropdown-content">
+                    <a href="/web1">🌐 Web Dev 1</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Term 2 </a>
+                <div class="dropdown-content">
+                    <a href="/web2">🚀 Web Dev 2</a>
+                    <a href="https://python-udgu.onrender.com/python2/">🧪 Python Term 2</a>
+                </div>
+            </div>
+        
+            <a href="contact.html"> Contact</a>
+        </nav>
+    </header>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="coding.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <main class="main-content">
+        <div class="hero-text">
+            <h1>Let's Build Something Together</h1>
+            <p>BCIT CIT Student | Tech Enthusiast</p>
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>Flask</span>
+                <span>Linux</span>
+            </div>
+        </div>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <h3>GET IN TOUCH</h3>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>yagayya.vig.dev@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://linkedin.com/in/yagayya-vig" target="_blank">linkedin.com/in/yagayya</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/yagayyavig" target="_blank">github.com/yagayya</a>
+                    </div>
+                </div>
+                <div class="availability">
+                    <h4>Current Status</h4>
+                    <p>Second Term CIT Student at BCIT</p>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        Open to Summer 2024 Opportunities
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>SEND ME A MESSAGE</h3>
+                <form name="contact" method="POST" data-netlify="true" action="thank-you.html">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="name" placeholder="Your Name" required />
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Your Email" required />
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-briefcase"></i>
+                        <input type="text" name="company" placeholder="Company (Optional)" />
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-message"></i>
+                        <textarea name="message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
+                    </div>
+                    <button type="submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <p>&copy; 2025 - Yagayya Projects</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        :root {
+            --accent: #00bfff;
+            --hover: #007acc;
+            --text: #e0f7fa;
+            --bg-black: #000000;
+            --card-bg: rgba(10, 10, 10, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-black);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            position: relative; /* Add this */
+        }
+
+        /* Main content wrapper */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem; /* Space for footer */
+        }
+
+        /* Navigation styling - fixed version */
+        nav {
+            background: rgba(20, 20, 20, 0.9);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.75rem;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a:hover {
+            background: var(--hover);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
+
+        /* Tech stack hover effects */
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .tech-stack span {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            cursor: pointer;
+            animation: fadeIn 0.5s ease-out backwards;
+        }
+
+        .tech-stack span:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(0, 191, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2);
+            border-color: var(--accent);
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(20, 20, 20, 0.95);
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            border-radius: 0;
+            border: none;
+            background: none;
+        }
+
+        .dropdown-content a:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-content a:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--hover);
+            transform: translateX(5px);
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0.6)
+            );
+        }
+
+        .main-content {
+            min-height: calc(100vh - 60px); /* Subtract footer height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 80px 20px; /* Increased bottom padding */
+            position: relative;
+            z-index: 1;
+            margin-bottom: 60px; /* Add space for footer */
+        }
+
+        .hero-text {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tech-stack span {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 0 40px rgba(0, 191, 255, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .contact-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 40px rgba(0, 191, 255, 0.15),
+                0 15px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        .info-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 1rem;
+        }
+
+        .info-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: var(--hover);
+        }
+
+        .availability {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff00;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem; /* Increased spacing */
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.2rem; /* Increased icon size */
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem 1.2rem 1.2rem 3.5rem; /* Increased padding */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1.1rem; /* Increased font size */
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
+        }
+
+        .form-group textarea {
+            padding-left: 3rem;
+            resize: vertical;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
+        }
+
+        button:hover {
+            background: var(--hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 60px 15px 30px 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .info-item:hover {
+                transform: translateX(5px);
+            }
+
+            .hero {
+                height: 35vh;
+            }
+
+            .tech-stack {
+                gap: 0.5rem;
+            }
+
+            .tech-stack span {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Enhanced footer styling */
+        footer {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 1rem;
+            text-align: center;
+            color: var(--accent);
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 191, 255, 0.1);
+            width: 100%;
+            position: fixed; /* Change to fixed */
+            bottom: 0;
+            left: 0;
+            z-index: 10; /* Ensure it's above other elements */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Remove the container and links classes from footer */
+        footer .container,
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                display: none;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content a {
+                text-align: center;
+            }
+
+            nav a {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .tech-stack span {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .tech-stack span:hover {
+                transform: translateY(-10px) scale(1.03);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.5rem;
+            }
+
+            .dropbtn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .hero {
+                height: 35vh;
+            }
+
+            footer {
+                padding: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+
+        /* Enhanced gradient background like index.html */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Enhanced tech stack styling */
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .tech-stack span {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-out; /* Made transition more pronounced */
+            cursor: pointer; /* Added cursor pointer */
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            position: relative;
+            will-change: transform; /* Optimize for animations */
+        }
+
+        .tech-stack span:hover {
+            transform: translateY(-15px) scale(1.05); /* Added scale for emphasis */
+            background: rgba(0, 191, 255, 0.2);
+            box-shadow: 
+                0 15px 25px rgba(0, 191, 255, 0.2),
+                0 0 30px rgba(0, 191, 255, 0.3);
+            border-color: var(--hover);
+            z-index: 2;
+        }
+
+        /* Animation for tech stack items */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add animation delay for each tech stack item */
+        .tech-stack span:nth-child(1) { animation-delay: 0.1s; }
+        .tech-stack span:nth-child(2) { animation-delay: 0.2s; }
+        .tech-stack span:nth-child(3) { animation-delay: 0.3s; }
+        .tech-stack span:nth-child(4) { animation-delay: 0.4s; }
+        .tech-stack span:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .tech-stack {
+                gap: 0.8rem;
+            }
+
+            .tech-stack span {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .tech-stack span:hover {
+                transform: translateY(-10px) scale(1.03); /* Reduced effect on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-stack {
+                gap: 0.6rem;
+            }
+
+            .tech-stack span {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Add smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = btn.parentElement;
+                dropdown.classList.toggle('active');
+                
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

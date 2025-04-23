@@ -4,6 +4,68 @@
   <meta charset="UTF-8" />
   <title>Yagayya's Dev Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <body>
+  <header>
+    Welcome to My Dev Portfolio
+  </header>
+
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Term 1</a>
+      <div class="dropdown-content">
+        <a href="/web1">🌐 Web Dev 1</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Term 2</a>
+      <div class="dropdown-content">
+        <a href="/web2">🚀 Web Dev 2</a>
+        <a href="https://python-udgu.onrender.com/python2/">🧪 Python Term 2</a>
+      </div>
+    </div>
+
+    <a href="contact.html"> Contact</a>
+  </nav>
+
+  <main class="center-box">
+    <div class="card">
+      <div class="profile-section">
+        <img src="./yagayya-vig.png" alt="Yagayya Vig" class="profile-pic">
+        <div>
+          <p class="welcome-text">Hey, I'm Yagayya 👋</p>
+          <div class="text-content">
+            <p>
+              I'm currently pursuing a diploma in Computer Information Technology (CIT) 
+              at the British Columbia Institute of Technology (BCIT), where I'm completing
+              my second term full-time. Throughout my studies, I've developed a strong foundation 
+              in Linux system administration, networking, object-oriented programming, and web 
+              development, using technologies such as Python, Flask, JavaScript, TypeScript, and Bash.
+            </p>
+            <p>
+              My coursework has further enhanced my skills in database systems, business systems analysis,
+              networking principles, and technical communications, providing me with comprehensive insights 
+              into the IT industry and the confidence to effectively navigate project workflows.
+            </p>
+            <p>
+              This portfolio showcases selected projects and labs from both academic terms, highlighting 
+              practical applications of my technical skills. It also includes a professional website 
+              I developed for Eurotech Assessment Services Inc., a real-world company specializing in certification and auditing.
+            </p>
+            <p>
+              When I'm not immersed in Coding, you'll find me hitting the gym, practicing Muay thai,
+              exploring new music, gaming casually, hanging out with friends, and playing soccer and cricket. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 - Yagayya Projects</small>
+  </footer>
+</body>
   <style>
     :root {
       --accent: #00bfff;
@@ -88,6 +150,62 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0, 191, 255, 0.1);
       animation: fadeIn 0.5s ease-out 0.2s backwards;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(20, 20, 20, 0.95);
+      min-width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 191, 255, 0.1);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 0;
+      border: none;
+      background: none;
+    }
+
+    .dropdown-content a:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    .dropdown-content a:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--hover);
+      transform: translateX(5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   
     nav a {
@@ -243,6 +361,26 @@
         align-items: stretch;
         padding: 1rem;
       }
+
+      .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 5px;
+      }
+
+      .dropdown.active .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        text-align: center;
+      }
+
+      nav a {
+        text-align: center;
+        justify-content: center;
+      }
   
       nav a {
         text-align: center;
@@ -303,53 +441,29 @@
     }
   </style>
 </head>
-<body>
-  <header>
-    Welcome to My Dev Portfolio
-  </header>
 
-  <nav>
-    <a href="/web1">🌐 Web Dev 1</a>
-    <a href="/web2">🚀 Web Dev 2</a>
-    <a href="https://python-udgu.onrender.com/python2/">🧪 Python Term 2</a>
-  </nav>
+<script>
+  // For mobile devices
+  document.querySelectorAll('.dropbtn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = btn.parentElement;
+      dropdown.classList.toggle('active');
+      
+      // Close other dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('active');
+      });
+    });
+  });
 
-  <main class="center-box">
-    <div class="card">
-      <div class="profile-section">
-        <img src="./yagayya-vig.png" alt="Yagayya Vig" class="profile-pic">
-        <div>
-          <p class="welcome-text">Hey, I'm Yagayya 👋</p>
-          <div class="text-content">
-            <p>
-              I'm currently pursuing a diploma in Computer Information Technology (CIT) 
-              at the British Columbia Institute of Technology (BCIT), where I'm completing
-              my second term full-time. Throughout my studies, I've developed a strong foundation 
-              in Linux system administration, networking, object-oriented programming, and web 
-              development, using technologies such as Python, Flask, JavaScript, TypeScript, and Bash.
-            </p>
-            <p>
-              My coursework has further enhanced my skills in database systems, business systems analysis,
-              networking principles, and technical communications, providing me with comprehensive insights 
-              into the IT industry and the confidence to effectively navigate project workflows.
-            </p>
-            <p>
-              This portfolio showcases selected projects and labs from both academic terms, highlighting 
-              practical applications of my technical skills. It also includes a professional website 
-              I developed for Eurotech Assessment Services Inc., a real-world company specializing in certification and auditing.
-            </p>
-            <p>
-              When I'm not immersed in Coding, you'll find me hitting the gym, practicing Muay thai,
-              exploring new music, gaming casually, hanging out with friends, and playing soccer and cricket. 
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <small>&copy; 2025 - Yagayya Projects</small>
-  </footer>
-</body>
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.matches('.dropbtn')) {
+      document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('active');
+      });
+    }
+  });
+</script>
 </html>
