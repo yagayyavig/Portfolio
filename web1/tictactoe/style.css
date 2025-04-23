@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     background: url('./image.png') no-repeat center center fixed;
     background-size: cover;
@@ -10,81 +11,179 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  header {
+}
+
+header {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 1.5rem;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: #ff4444;
     font-weight: bold;
     box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
     width: 100%;
-  }
-  
-  .board {
+}
+
+.board {
     display: grid;
-    grid-template-columns: repeat(3, 120px);
-    gap: 10px;
+    grid-template-columns: repeat(3, minmax(80px, 120px));
+    gap: clamp(5px, 2vw, 10px);
     justify-content: center;
-    margin-top: 40px;
-    padding: 20px;
-  }
-  
-  .cell {
-    background: #a8d8ff;  /* Light ice blue */
-    border: 3px solid #ff4444;  /* Festive red border */
+    margin-top: clamp(20px, 4vh, 40px);
+    padding: clamp(10px, 2vw, 20px);
+}
+
+.cell {
+    background: #a8d8ff;
+    border: 3px solid #ff4444;
     border-radius: 15px;
-    height: 120px;
-    font-size: 2.5rem;
+    aspect-ratio: 1;
+    font-size: clamp(2rem, 8vw, 2.5rem);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);  /* Red glow */
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
     transition: 0.3s ease;
     user-select: none;
-  }
-  
-  .cell:hover {
+}
+
+.cell:hover {
     transform: scale(1.05);
-    background: #cce7ff;  /* Lighter ice blue on hover */
-    box-shadow: 0 0 20px rgba(255, 68, 68, 0.7);  /* Stronger red glow */
-  }
-  
-  .status {
-    margin-top: 20px;
-    font-size: 1.5rem;
+    background: #cce7ff;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.7);
+}
+
+.status {
+    margin-top: clamp(15px, 3vh, 20px);
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     color: #00ffcc;
     text-shadow: 0px 0px 8px #00ffcc;
-  }
-  
-  .restart-btn {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    background: #ff4444;  /* Festive red */
+    padding: 0 1rem;
+}
+
+.restart-btn {
+    margin-top: clamp(15px, 3vh, 20px);
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    background: #ff4444;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease;
     box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
-  }
-  
-  .restart-btn:hover {
+}
+
+.restart-btn:hover {
     transform: scale(1.05);
-    background: #ff6666;  /* Lighter red on hover */
+    background: #ff6666;
     box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
-  }
-  
-  footer {
-    margin-top: 40px;
+}
+
+footer {
+    margin-top: clamp(20px, 4vh, 40px);
     color: #eee;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     width: 100%;
-  }
+    padding: 1rem;
+}
+
+.back-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    text-decoration: none;
+    color: white;
+    width: 4.5rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    z-index: 10;
+    line-height: 1;
+    padding-bottom: 0.2rem;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+    .board {
+        grid-template-columns: repeat(3, minmax(60px, 90px));
+    }
+
+    .back-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .board {
+        grid-template-columns: repeat(3, minmax(50px, 70px));
+    }
+
+    .cell {
+        border-width: 2px;
+        border-radius: 10px;
+    }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .board {
+        margin-top: 10px;
+    }
+
+    header {
+        padding: 0.8rem;
+    }
+
+    .status, .restart-btn {
+        margin-top: 10px;
+    }
+
+    footer {
+        margin-top: 10px;
+        padding: 0.5rem;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cell {
+        box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+    }
+}
+
+/* Ensure minimum touch target sizes */
+.cell, .restart-btn, .back-btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
   
   .x::before {
     content: "🎅";

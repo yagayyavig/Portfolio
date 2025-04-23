@@ -7,12 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
       --accent: #00bfff;
       --hover: #007acc;
       --text: #e0f7fa;
       --bg-black: #000000;
+      --card-bg: rgba(10, 10, 10, 0.9);
     }
 
     * {
@@ -30,8 +32,11 @@
       justify-content: center;
       align-items: center;
       padding: 1rem;
+      position: relative;
+      overflow-x: hidden;
     }
 
+    /* Enhanced gradient background */
     body::before {
       content: "";
       position: fixed;
@@ -39,33 +44,65 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%);
       z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 1rem;
     }
 
     .card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: rgba(10, 10, 10, 0.9);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-      backdrop-filter: blur(6px);
-      max-width: 450px;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 1.2rem;
+      box-shadow: 
+        0 0 20px rgba(0, 191, 255, 0.2),
+        0 10px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
       width: 100%;
       text-align: center;
+      animation: cardFloat 0.5s ease-out;
+    }
+
+    @keyframes cardFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .card img {
-      width: 60px;
-      margin-bottom: 1rem;
+      width: 70px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      animation: logoSpin 20s linear infinite;
+    }
+
+    @keyframes logoSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     h2 {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       color: var(--accent);
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     form {
@@ -73,140 +110,201 @@
       max-width: 350px;
     }
 
+    .input-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
     label {
       display: block;
       text-align: left;
-      margin: 0.5rem 0 0.25rem;
-      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.9;
     }
 
     input {
       width: 100%;
-      padding: 0.6rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem;
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     input::placeholder {
-      color: #a9cfe3;
+      color: rgba(169, 207, 227, 0.6);
     }
 
     button {
       width: 100%;
-      padding: 0.65rem;
+      padding: 0.8rem;
       border: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
-      transition: 0.3s ease;
-      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      margin-top: 0.5rem;
     }
 
     .btn-primary {
       background-color: var(--accent);
-      color: #000;
+      color: var(--bg-black);
     }
 
     .btn-primary:hover {
       background-color: var(--hover);
-      color: #fff;
-      box-shadow: 0 0 12px var(--accent);
+      color: var(--text);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+      transform: translateY(-2px);
     }
 
     .btn-dark {
       background-color: #222;
-      color: white;
-      margin-top: 0.5rem;
+      color: var(--text);
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .btn-dark:hover {
       background-color: #111;
-      box-shadow: 0 0 10px var(--accent);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark i {
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      margin: 1.2rem 0;
+      color: #aaa;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .links {
+      margin-top: 1.5rem;
     }
 
     p {
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       color: #a9cfe3;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     a:hover {
-      text-shadow: 0 0 5px var(--accent);
+      color: var(--hover);
+      text-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
     }
 
-    h5 {
-      margin: 1rem 0;
-      color: #aaa;
-      font-size: 0.9rem;
+    .note {
+      margin-top: 1.5rem;
+      color: #666;
+      font-size: 0.8rem;
+      font-style: italic;
     }
 
     @media (max-width: 480px) {
+      .container {
+        padding: 0.5rem;
+      }
+
       .card {
-        padding: 1.5rem;
-        margin: 1rem;
+        padding: 1.8rem;
+        border-radius: 1rem;
       }
 
       h2 {
-        font-size: 1.5rem;
-      }
-
-      form {
-        max-width: 100%;
-      }
-
-      input, button {
-        padding: 0.5rem;
-        font-size: 0.85rem;
-      }
-
-      p {
-        font-size: 0.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
       }
 
       .card img {
-        width: 50px;
+        width: 55px;
+      }
+
+      input, button {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+      }
+
+      p {
+        font-size: 0.85rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="../secure-icon.png" alt="icon" />
-    <h2>Login</h2>
+  <div class="container">
+    <div class="card">
+      <img src="../secure-icon.png" alt="Security Icon" />
+      <h2>Login</h2>
 
-    <form action="/auth/login" method="POST">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter Email" required/>
+      <form action="/auth/login" method="POST">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email"
+            required
+          />
+        </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter Password" required/>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Enter your password"
+            required
+          />
+        </div>
 
-      <button type="submit" class="btn-primary">Login</button>
-    </form>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
 
-    <h5>OR</h5>
+      <h5>OR</h5>
 
-    <form action="/auth/github" method="GET">
-      <button type="submit" class="btn-dark">
-        <i class="fab fa-github"></i> Login with GitHub
-      </button>
-    </form>
+      <form action="/auth/github" method="GET">
+        <button type="submit" class="btn-dark">
+          <i class="fab fa-github"></i>
+          Login with GitHub
+        </button>
+      </form>
 
-    <p>New User? <a href="/auth/register">Register</a></p>
-    <p>Forgot Password? <a href="/auth/forgot">Reset</a></p>
+      <div class="links">
+        <p>New User? <a href="/auth/register">Register</a></p>
+        <p>Forgot Password? <a href="/auth/forgot">Reset</a></p>
+      </div>
 
-    <p style="margin-top: 1rem; color:#666; font-size:0.8rem;">
-      Have not setup register and reset buttons yet.
-    </p>
+      <p class="note">
+        Register and reset functionality coming soon.
+      </p>
+    </div>
   </div>
 </body>
 </html>

@@ -229,21 +229,39 @@ body {
 }
 
 .back-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
     text-decoration: none;
     color: white;
-    font-weight: bold;
-    padding: 10px 15px;
+    width: 6.5rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    transition: transform 0.2s ease, background 0.3s;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    z-index: 10;
+    line-height: 1;
+    padding-bottom: 0.2rem; /* Adjust vertical alignment */
 }
 
 .back-btn:hover {
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
+}
+
+/* Adjust back button for mobile */
+@media screen and (max-width: 480px) {
+    .back-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
 }
 
 [data-theme="dark"] body {
@@ -278,3 +296,150 @@ body {
     border: 2px solid #ff6b6b;
     box-shadow: 0 0 25px #ff6b6b, 0 0 50px #ff6b6b;
 }
+
+/* Base responsive adjustments */
+html {
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.timer {
+    font-size: clamp(3rem, 15vw, 6rem);
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .controls, .mode-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .controls button, 
+    .mode-buttons button {
+        flex: 1;
+        min-width: 120px;
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .theme-toggle {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 1rem 0.5rem;
+    }
+
+    .controls button, 
+    .mode-buttons button {
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 0.8rem;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .modal-content input {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0.8rem 0.4rem;
+    }
+
+    .timer {
+        margin: 1rem 0;
+    }
+
+    .controls button, 
+    .mode-buttons button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Height-based media queries */
+@media screen and (max-height: 600px) {
+    .container {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .timer {
+        margin: 1rem 0;
+    }
+
+    .timer-image {
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+    }
+}
+
+/* High-DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .container {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Ensure minimum touch target sizes */
+button,
+.back-btn,
+.theme-toggle {
+    min-height: 35px;
+    min-width: 35px;
+}
+
+/* Prevent text overflow */
+* {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
