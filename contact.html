@@ -11,23 +11,23 @@
         <nav>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
             
-            <div class="dropdown">
-                <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
-                <div class="dropdown-content">
+                <div class="dropdown">
+                  <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
+                  <div class="dropdown-content">
                     <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
+                  </div>
                 </div>
-            </div>
-
-            <div class="dropdown">
-                <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
-                <div class="dropdown-content">
+            
+                <div class="dropdown">
+                  <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
+                  <div class="dropdown-content">
                     <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
                     <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
+                  </div>
                 </div>
-            </div>
-
-            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
+            
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
     </header>
 
     <div class="video-background">
@@ -367,20 +367,49 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            background: rgba(10, 10, 10, 0.95);
+            background: var(--card-bg);
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 
-                0 0 40px rgba(0, 191, 255, 0.1),
-                0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.1),
+                        0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        /* Add blue shiny sweep effect */
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(0, 191, 255, 0.1),
+                transparent
+            );
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .contact-container:hover::before {
+            transform: translateX(100%);
         }
 
         .contact-container:hover {
             transform: translateY(-5px);
-            box-shadow: 
-                0 0 40px rgba(0, 191, 255, 0.15),
-                0 15px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 40px rgba(0, 191, 255, 0.15),
+                        0 15px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Ensure content stays above shine effect */
+        .contact-container > * {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-info h3,
@@ -475,12 +504,20 @@
             transition: all 0.3s ease;
         }
 
+        /* Add a subtle glow to form inputs on focus */
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.15);
+        }
+
+        /* Add subtle hover effect to form inputs */
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: rgba(0, 191, 255, 0.4);
+            background: rgba(255, 255, 255, 0.07);
         }
 
         .form-group textarea {
@@ -755,6 +792,13 @@
         /* Add smooth scrolling for the whole page */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Optional: Add animation for reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .contact-container::before {
+                animation: none;
+            }
         }
     </style>
 
