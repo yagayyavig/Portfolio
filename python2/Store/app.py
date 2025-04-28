@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from db import db
 from pathlib import Path
 from datetime import datetime
@@ -12,6 +12,78 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
+
+
+from flask import Response
+
+@app.route("/python2/sitemap.xml")
+def sitemap():
+    pages = []
+    base_url = "https://python-udgu.onrender.com/python2"
+    today = datetime.now().date().isoformat()
+
+    # Static pages
+    static_urls = [
+        (f"{base_url}/", "monthly"),
+        (f"{base_url}/products", "weekly"),
+        (f"{base_url}/categories", "weekly"),
+        (f"{base_url}/customers", "weekly"),
+        (f"{base_url}/orders", "daily"),
+    ]
+    for url, freq in static_urls:
+        pages.append(f"""
+            <url>
+                <loc>{url}</loc>
+                <lastmod>{today}</lastmod>
+                <changefreq>{freq}</changefreq>
+                <priority>1.0</priority>
+            </url>
+        """)
+
+    # Dynamic Categories
+    categories = db.session.execute(db.select(Category)).scalars()
+    for category in categories:
+        pages.append(f"""
+            <url>
+                <loc>{base_url}/categories/{category.id}</loc>
+                <lastmod>{today}</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.8</priority>
+            </url>
+        """)
+
+    # Dynamic Customers
+    customers = db.session.execute(db.select(Customer)).scalars()
+    for customer in customers:
+        pages.append(f"""
+            <url>
+                <loc>{base_url}/customers/{customer.id}</loc>
+                <lastmod>{today}</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.6</priority>
+            </url>
+        """)
+
+    # Dynamic Orders
+    orders = db.session.execute(db.select(Order)).scalars()
+    for order in orders:
+        pages.append(f"""
+            <url>
+                <loc>{base_url}/orders/{order.id}</loc>
+                <lastmod>{today}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>0.7</priority>
+            </url>
+        """)
+
+    # Final XML response
+    sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        {''.join(pages)}
+    </urlset>"""
+
+    return Response(sitemap_xml, mimetype="application/xml")
+
 
 @app.route("/python2/")
 def home():
