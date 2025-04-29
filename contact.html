@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contact | Yagayya Vig</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            
             <div class="dropdown">
-                <a href="term1.html" class="dropbtn" onclick="return false;"><i class="fas fa-book"></i> Term 1</a>
-                <div class="dropdown-content">
-                    <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
-                </div>
+              <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
+              <div class="dropdown-content">
+                <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
+              </div>
             </div>
-            
             <div class="dropdown">
-                <a href="term2.html" class="dropbtn" onclick="return false;"><i class="fas fa-laptop-code"></i> Term 2</a>
-                <div class="dropdown-content">
-                    <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
-                    <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
-                </div>
+              <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
+              <div class="dropdown-content">
+                <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
+                <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
+              </div>
             </div>
-            
-            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="https://eurotech-canada.com/"> Eurotech-Website</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="https://eurotech-canada.com/">Eurotech-Website</a>
         </nav>
     </header>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="coding.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
 
     <style>
         nav {
@@ -282,6 +287,7 @@
 
         /* Main content wrapper */
         main {
+            padding: 100px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -1000,17 +1006,35 @@
     </style>
 
     <script>
-        document.querySelectorAll('.dropbtn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const dropdown = btn.parentElement;
-                dropdown.classList.toggle('active');
-                
-                document.querySelectorAll('.dropdown').forEach(d => {
-                    if (d !== dropdown) d.classList.remove('active');
-                });
-            });
+        // Add animation classes on page load
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelector('header').classList.add('animate-slideDown');
+          document.querySelector('nav').classList.add('animate-fadeIn');
+          document.querySelector('.card').classList.add('animate-fadeIn');
         });
-    </script>
+      
+        // For mobile devices
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            // Don't prevent default here - allow the link to work
+            const dropdown = btn.parentElement;
+            dropdown.classList.toggle('active');
+            
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+              if (d !== dropdown) d.classList.remove('active');
+            });
+          });
+        });
+      
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.matches('.dropbtn')) {
+            document.querySelectorAll('.dropdown').forEach(d => {
+              d.classList.remove('active');
+            });
+          }
+        });
+      </script>
 </body>
 </html>
