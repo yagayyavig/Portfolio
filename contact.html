@@ -223,30 +223,38 @@
             </div>
             <div class="contact-form">
                 <h3>SEND ME A MESSAGE</h3>
-                <form name="contact" method="POST" data-netlify="true" action="thank-you.html">
+                <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <textarea name="message"></textarea>
+                  </form>
+                  
+                  <!-- Visible form for users -->
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
                     <input type="hidden" name="form-name" value="contact" />
                     <input type="text" name="bot-field" style="display: none;" />
+                    
                     <div class="form-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="name" placeholder="Your Name" required />
+                      <i class="fas fa-user"></i>
+                      <input type="text" name="name" placeholder="Your Name" required />
                     </div>
                     <div class="form-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="email" placeholder="Your Email" required />
+                      <i class="fas fa-envelope"></i>
+                      <input type="email" name="email" placeholder="Your Email" required />
                     </div>
                     <div class="form-group">
-                        <i class="fas fa-briefcase"></i>
-                        <input type="text" name="company" placeholder="Company (Optional)" />
+                      <i class="fas fa-briefcase"></i>
+                      <input type="text" name="company" placeholder="Company (Optional)" />
                     </div>
                     <div class="form-group">
-                        <i class="fas fa-message"></i>
-                        <textarea name="message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
+                      <i class="fas fa-message"></i>
+                      <textarea name="message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
                     </div>
                     <button type="submit">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
+                      <span>Send Message</span>
+                      <i class="fas fa-paper-plane"></i>
                     </button>
-                </form>
+                  </form>
             </div>
         </section>
     </main>
