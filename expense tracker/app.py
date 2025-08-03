@@ -161,9 +161,18 @@ if __name__ == "__main__":  # pragma: no cover
         db.create_all()
 
         default_categories = [
-            "Dining Out 🍽️", "Education 🎓", "Entertainment 🎬", "Gas ⛽",
-            "Groceries 🛒", "Health & Medical 💊", "Internet & Phone 📶",
-            "Personal Care 🧴", "Rent 🏠", "Transport 🚌", "Utilities 💡", "Other 📁"
+            "Dining Out 🍽️", 
+            "Education 🎓", 
+            "Entertainment 🎬", 
+            "Gas ⛽",
+            "Groceries 🛒", 
+            "Health & Medical 💊", 
+            "Internet & Phone 📶",
+            "Personal Care 🧴", 
+            "Rent 🏠", 
+            "Transport 🚌", 
+            "Utilities 💡", 
+            "Other 📁"
         ]
 
         for name in default_categories:
