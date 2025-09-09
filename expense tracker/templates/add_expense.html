@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Add Expense - Expense Tracker{% endblock %}
+
+{% block content %}
+<div class="center-box">
+    <div class="card" style="max-width: 900px; font-size: 1.4rem;">
+        <h1 style="text-align: center; font-size: 3rem;">Add New Expense</h1>
+
+        <form method="post" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; ">
+            <div>
+                <label>Amount ($):</label><br>
+                <input type="number" step="0.01" name="amount" required class="input-box">
+            </div>
+
+            <div>
+                <label>Category:</label><br>
+                <select name="category_id" required class="input-box">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label>Date:</label><br>
+                <input type="date" name="date" required class="input-box" max="{{ today }}">
+            </div>
+
+            <div>
+                <label>Note:</label><br>
+                <input type="text" name="note" class="input-box">
+            </div>
+
+            <button type="submit" class="btn" style="font-size: 19px;">Add Expense</button>
+        </form>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="{{ url_for('list_expenses') }}" class="btn-back">Back to Expenses</a>
+        </div> 
+    </div>
+</div>
+{% endblock %}

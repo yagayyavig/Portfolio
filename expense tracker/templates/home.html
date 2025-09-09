@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<main class="main-content" style="justify-content: center; align-items: center; display: flex; min-height: 80vh;">
+  <div class="card" style="max-width: 600px; width: 100%; text-align: center;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">
+      Welcome Back
+    </h1>
+    <p style="margin-bottom: 1.5rem;">
+      Log your expenses and take control of your finances.
+    </p>
+    <a href="{{ url_for('list_expenses') }}" class="btn" style="padding: 18px; font-size:large">
+      View Expenses
+    </a>
+  </div>
+</main>
+{% endblock %}
