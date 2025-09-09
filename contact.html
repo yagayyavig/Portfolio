@@ -36,101 +36,6 @@
         <div class="video-overlay"></div>
     </div>
 
-    <style>
-        nav {
-            background: rgba(20, 20, 20, 0.9);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 0.75rem;
-            gap: 15px;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
-            z-index: 999;
-            animation: fadeIn 0.5s ease-out 0.2s backwards;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(20, 20, 20, 0.95);
-            min-width: 200px;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 191, 255, 0.1);
-        }
-
-        nav a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 191, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        nav a:hover {
-            background: var(--hover);
-            color: white;
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
-            transform: translateY(-2px);
-            border-color: transparent;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Mobile responsive styles */
-        @media (max-width: 768px) {
-            html {
-                font-size: 15px;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            nav a, .dropdown-content a {
-                width: 100%;
-                text-align: center;
-                padding: 0.7rem 1rem;
-            }
-
-            .dropdown-content {
-                position: relative;
-                width: 100%;
-                margin-top: 0.5rem;
-            }
-        }
-
-        /* Touch-friendly targets */
-        @media (hover: none) {
-            .dropdown:hover .dropdown-content {
-                display: none;
-            }
-            
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-        }
-    </style>
-
     <script>
         // Add animation classes on page load
         document.addEventListener('DOMContentLoaded', () => {
@@ -296,18 +201,11 @@
 
         /* Navigation styling - fixed version */
         nav {
-            background: rgba(20, 20, 20, 0.9);
             display: flex;
             justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
             flex-wrap: wrap;
-            padding: 0.75rem;
-            gap: 15px;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
         }
 
         nav a {
