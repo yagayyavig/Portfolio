@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,468&display=swap');
+:root {
+  --accent: #00bfff;
+  --hover: #7e57c2;
+  --text: #e0f7fa;
+  --bg: linear-gradient(135deg, #0a0a0a, #0a1828, #101b30, #083365);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: 1px solid rgba(132, 0, 255, 0.4);
+  --card-shadow: 0 6px 20px rgba(132, 0, 255, 0.2), 0 0 20px rgba(132, 0, 255, 0.1);
+  --btn-bg: linear-gradient(to right, #00bfff, #7e57c2);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 468;
+  font-style: normal;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.8s ease-in-out both;
+}
+
+/* Header */
+header {
+  background-color: #00000055;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  padding: 1rem 1.6rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.4s ease-in-out, background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+header nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: radial-gradient(circle at center, rgba(0, 191, 255, 0.25), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+header nav a:hover {
+  transform: scale(1.08);
+  background: rgba(0, 191, 255, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3), 0 0 18px rgba(0, 191, 255, 0.2);
+}
+
+header nav a:hover::before {
+  opacity: 1;
+}
+
+/* Main */
+main.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: var(--card-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+
+  /* Initial appearance */
+  animation: fadeInUp 0.9s ease-in-out both;
+
+  /* Smooth hover transition */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* 👈 Lift effect */
+  box-shadow: 0 18px 50px rgba(132, 0, 255, 0.35), 0 0 35px rgba(132, 0, 255, 0.25);
+}
+
+
+/* Form Elements */
+input, textarea, select {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  background-color: rgb(56, 56, 56);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+input[type="date"] {
+  background-color: rgb(56, 56, 56);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  appearance: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* makes the icon white in dark mode */
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+
+/* Buttons */
+button, .btn, .btn-back, a.btn-back,
+.btn-del, a.btn-del,
+a.btn, .filter-btn {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  min-width: 80px;
+  transition: all 0.4s ease-in-out;
+}
+
+button:hover, .btn:hover, .btn-back:hover, a.btn-back:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(126, 87, 194, 0.4);
+}
+
+.btn-del, a.btn-del {
+  background: #e53935;
+}
+
+.btn-del:hover, a.btn-del:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(229, 57, 53, 0.3);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  color: var(--text);
+  vertical-align: middle;
+}
+
+th {
+  background-color: rgba(0, 191, 255, 0.15);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+tr {
+  animation: fadeIn 0.6s ease-in-out both;
+}
+
+/* Optional: staggered row animation (can continue as needed) */
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.2s; }
+tr:nth-child(3) { animation-delay: 0.3s; }
+tr:nth-child(4) { animation-delay: 0.4s; }
+
+tr:hover {
+  background-color: rgba(0, 191, 255, 0.1);
+  transition: background-color 0.4s ease-in-out;
+}
+
+/* Layout helpers */
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82vh;
+  flex-direction: column;
+  text-align: center;
+  width: 95%;
+  max-width: 900px;
+  animation: fadeInUp 0.9s ease-in-out both;
+}
+
+.welcome-text {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 8px var(--accent), 0 0 20px var(--hover);
+  }
+  100% {
+    text-shadow: 0 0 18px var(--accent), 0 0 30px var(--hover);
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #00000055;
+  color: #ccc;
+}
+
+/* Headings */
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  animation: fadeInUp 0.9s ease-in-out both;
+}
+
+.h1 h1, h1 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  color: var(--accent);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .filter-btn, .btn, .btn-del {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  header nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
