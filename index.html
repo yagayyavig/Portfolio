@@ -1,526 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Yagayya's Dev Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <body>
-  <header>
-    <i class="fas fa-code"></i> Welcome to My Dev Portfolio
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yagayya's Dev Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <body>
+      <header><i class="fas fa-code"></i> Welcome to My Dev Portfolio</header>
 
-  <nav>
-    <div class="dropdown">
-      <a href="term1.html" class="dropbtn"><i class="fas fa-book"></i> Term 1</a>
-      <div class="dropdown-content">
-        <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="term2.html" class="dropbtn"><i class="fas fa-laptop-code"></i> Term 2</a>
-      <div class="dropdown-content">
-        <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
-        <a href="https://python-udgu.onrender.com/python2/"><i class="fas fa-python"></i> Python Term 2</a>
-      </div>
-    </div>
-
-    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-    <a href="https://eurotech-canada.com/"> Eurotech-Website</a>
-  </nav>
-
-  <main class="center-box">
-    <div class="card">
-      <div class="profile-section">
-        <img src="./yagayya-vig.png" alt="Yagayya Vig" class="profile-pic">
-        <div>
-          <p class="welcome-text"><i class="fas fa-hand-wave"></i> Hey, I'm Yagayya 👋</p>
-          <div class="text-content">
-            <p>
-              <i class="fas fa-graduation-cap"></i> I'm currently pursuing a diploma in Computer Information Technology (CIT) 
-              at the British Columbia Institute of Technology (BCIT), where I'm completing
-              my second term full-time. Throughout my studies, I've developed a strong foundation 
-              in Linux system administration, networking, object-oriented programming, and web 
-              development, using technologies such as Python, Flask, JavaScript, TypeScript, and Bash.
-            </p>
-            <p>
-              <i class="fas fa-laptop"></i> My coursework has further enhanced my skills in database systems, business systems analysis,
-              networking principles, and technical communications, providing me with comprehensive insights 
-              into the IT industry and the confidence to effectively navigate project workflows.
-            </p>
-            <p>
-              <i class="fas fa-code-branch"></i> This portfolio showcases selected projects and labs from both academic terms, highlighting 
-              practical applications of my technical skills. It also includes a professional website 
-              I developed for Eurotech Assessment Services Inc., a real-world company specializing in certification and auditing.
-            </p>
-            <p>
-              <i class="fas fa-heart"></i> When I'm not immersed in Coding, you'll find me hitting the gym, practicing Muay thai,
-              exploring new music, gaming casually, hanging out with friends, and playing soccer and cricket. 
-            </p>
+      <nav>
+        <div class="dropdown">
+          <a href="term1.html" class="dropbtn"
+            ><i class="fas fa-book"></i> Term 1</a
+          >
+          <div class="dropdown-content">
+            <a href="/web1"><i class="fas fa-globe"></i> Web Dev 1</a>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
 
-  <footer>
-    <small><i class="far fa-copyright"></i> 2025 - Yagayya Projects</small>
-  </footer>
-</body>
-  <style>
-    :root {
-      --accent: #00bfff;
-      --hover: #007acc;
-      --text: #e0f7fa;
-      --bg-black: #000000;
-      --card-bg: rgba(10, 10, 10, 0.9);
-    }
-  
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
-    html {
-      font-size: 16px;
-    }
-  
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-black);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-  
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    /* Enhanced gradient background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 40%);
-      z-index: -1;
-      pointer-events: none;
-    }
-  
-    header {
-      background: rgba(10, 10, 10, 0.85);
-      color: var(--accent);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      box-shadow: 0 2px 15px rgba(0, 191, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 191, 255, 0.1);
-      animation: slideDown 0.5s ease-out;
-    }
+        <div class="dropdown">
+          <a href="term2.html" class="dropbtn"
+            ><i class="fas fa-laptop-code"></i> Term 2</a
+          >
+          <div class="dropdown-content">
+            <a href="/web2"><i class="fas fa-rocket"></i> Web Dev 2</a>
+            <a href="https://python-udgu.onrender.com/python2/"
+              ><i class="fas fa-python"></i> Python Term 2</a
+            >
+          </div>
+        </div>
 
-    @keyframes slideDown {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  
-    nav {
-      background: rgba(20, 20, 20, 0.9);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0.75rem;
-      gap: 15px;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 191, 255, 0.1);
-      z-index: 999; /* Ensure nav is above content but below dropdown */
-      animation: fadeIn 0.5s ease-out 0.2s backwards;
-    }
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="https://eurotech-canada.com/"> Eurotech-Website</a>
+      </nav>
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+      <main class="center-box">
+        <div class="card">
+          <div class="profile-section">
+            <img
+              src="./yagayya-vig.png"
+              alt="Yagayya Vig"
+              class="profile-pic"
+            />
+            <div>
+              <p class="welcome-text">
+                <i class="fas fa-hand-wave"></i> Hey, I'm Yagayya 👋
+              </p>
+              <div class="text-content">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> II am currently in my
+                  final term of the Computer Information Technology (CIT)
+                  diploma program at the British Columbia Institute of
+                  Technology (BCIT). Through the program’s four levels, I have
+                  developed a strong foundation in Linux and Windows system
+                  administration, networking, cloud computing, database systems,
+                  application development, and IT infrastructure.
+                </p>
+                <p>
+                  <i class="fas fa-laptop"></i> My coursework spans systems
+                  administration, enterprise networking, scripting and
+                  automation, object-oriented programming, web and service-based
+                  application development, database administration, cloud
+                  computing, information assurance and security, DevOps and
+                  system provisioning, business systems analysis, and IT service
+                  and project management. This has provided me with a
+                  well-rounded understanding of both the technical and
+                  operational aspects of modern IT environments.
+                </p>
+                <p>
+                  <i class="fas fa-code-branch"></i> My coursework spans systems
+                  administration, enterprise networking, scripting and
+                  automation, object-oriented programming, web and service-based
+                  application development, database administration, cloud
+                  computing, information assurance and security, DevOps and
+                  system provisioning, business systems analysis, and IT service
+                  and project management. This has provided me with a
+                  well-rounded understanding of both the technical and
+                  operational aspects of modern IT environments. In addition to
+                  academic coursework, I have worked on real-world projects. In
+                  Term 3, I contributed to the Burnaby Board of Trade Grant
+                  Search Tool as part of the ISSP project, helping design and
+                  implement a practical web-based solution. I also designed and
+                  developed a professional website for Eurotech Assessment
+                  Services Inc., gaining experience working with real client
+                  requirements, timelines, and deployment considerations. This
+                  portfolio highlights selected projects and labs from across
+                  the CIT program, demonstrating hands-on experience with
+                  enterprise technologies, problem-solving, and collaborative
+                  development.
+                </p>
+                <p>
+                  <i class="fas fa-heart"></i> Outside of technology, I maintain
+                  an active lifestyle. When I’m not coding or working on
+                  systems, I enjoy training at the gym, practicing Muay Thai,
+                  exploring new music, casual gaming, spending time with
+                  friends, and playing soccer and cricket
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(20, 20, 20, 0.95);
-      min-width: 200px;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1000; /* Increased z-index */
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0, 191, 255, 0.1);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-      animation: fadeIn 0.3s ease-out;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.8rem 1.2rem;
-      border-radius: 0;
-      border: none;
-      background: none;
-    }
-
-    .dropdown-content a:first-child {
-      border-radius: 8px 8px 0 0;
-    }
-
-    .dropdown-content a:last-child {
-      border-radius: 0 0 8px 8px;
-    }
-
-    .dropdown-content a:hover {
-      background: var(--hover);
-      transform: translateX(5px);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 0.8rem 1.8rem;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 191, 255, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  
-    nav a:hover {
-      background: var(--hover);
-      color: white;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
-      transform: translateY(-2px);
-      border-color: transparent;
-    }
-  
-    .center-box, .card, .main-content {
-      position: relative;
-      z-index: 1; /* Lower z-index than nav and dropdown */
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 0.5s ease-out 0.4s backwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    .card {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 1.2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 
-        0 0 30px rgba(0, 191, 255, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 1000px;
-      margin: auto;
-      border: 1px solid rgba(0, 191, 255, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Add blue shiny sweep effect */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(0, 191, 255, 0.1),
-        transparent
-      );
-      transform: translateX(-100%);
-      transition: 0.5s;
-    }
-
-    .card:hover::before {
-      transform: translateX(100%);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 
-        0 0 40px rgba(0, 191, 255, 0.15),
-        0 15px 25px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Ensure content stays above shine effect */
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-  
-    .welcome-text {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--accent);
-      transition: all 0.3s ease;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
-    }
-  
-    .welcome-text:hover {
-      color: #66fcff;
-      text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
-      transform: scale(1.05);
-    }
-  
-    p {
-      font-size: 1.1rem;
-      color: #a9cfe3;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-  
-    footer {
-      background: rgba(20, 20, 20, 0.95);
-      padding: 1rem;
-      text-align: center;
-      color: var(--accent);
-      font-size: 0.9rem;
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(0, 191, 255, 0.1);
-      animation: fadeIn 0.5s ease-out 0.6s backwards;
-    }
-
-    footer small {
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
-    }
-
-    footer small:hover {
-      opacity: 1;
-    }
-  
-    .profile-section {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-  
-    .profile-pic:hover {
-      transform: scale(1.05) rotate(5deg);
-      box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
-      border-color: #66fcff;
-    }
-
-    .text-content {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      margin-top: 1.5rem;
-      border: 1px solid rgba(0, 191, 255, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .text-content:hover {
-      background: rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-  
-    /* Base responsive settings */
-    @media (max-width: 1200px) {
-      .profile-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
+      <footer>
+        <small><i class="far fa-copyright"></i> 2025 - Yagayya Projects</small>
+      </footer>
+    </body>
+    <style>
+      :root {
+        --accent: #00bfff;
+        --hover: #007acc;
+        --text: #e0f7fa;
+        --bg-black: #000000;
+        --card-bg: rgba(10, 10, 10, 0.9);
       }
 
-      .profile-pic {
-        margin: 0 auto;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .text-content {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
       html {
-        font-size: 15px;
+        font-size: 16px;
       }
 
-      .center-box {
-        padding: 1rem;
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: var(--bg-black);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Enhanced gradient background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 191, 255, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 191, 255, 0.1) 0%,
+            transparent 40%
+          );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      header {
+        background: rgba(10, 10, 10, 0.85);
+        color: var(--accent);
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        box-shadow: 0 2px 15px rgba(0, 191, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        animation: slideDown 0.5s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       nav {
-        flex-direction: column;
-        gap: 0.8rem;
+        background: rgba(20, 20, 20, 0.9);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.75rem;
+        gap: 15px;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        z-index: 999; /* Ensure nav is above content but below dropdown */
+        animation: fadeIn 0.5s ease-out 0.2s backwards;
       }
 
-      nav a, .dropdown-content a {
-        width: 100%;
-        text-align: center;
-        padding: 0.7rem 1rem;
+      .dropdown {
+        position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(20, 20, 20, 0.95);
+        min-width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Increased z-index */
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 191, 255, 0.1);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0;
+        border: none;
+        background: none;
+      }
+
+      .dropdown-content a:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+
+      .dropdown-content a:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-content a:hover {
+        background: var(--hover);
+        transform: translateX(5px);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 191, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      nav a:hover {
+        background: var(--hover);
+        color: white;
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        transform: translateY(-2px);
+        border-color: transparent;
+      }
+
+      .center-box,
+      .card,
+      .main-content {
         position: relative;
+        z-index: 1; /* Lower z-index than nav and dropdown */
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+        animation: fadeIn 0.5s ease-out 0.4s backwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 1.2rem;
+        backdrop-filter: blur(10px);
+        box-shadow:
+          0 0 30px rgba(0, 191, 255, 0.1),
+          0 10px 20px rgba(0, 0, 0, 0.2);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         width: 100%;
-        margin-top: 0.5rem;
+        max-width: 1000px;
+        margin: auto;
+        border: 1px solid rgba(0, 191, 255, 0.1);
+        position: relative;
+        overflow: hidden;
       }
 
-      header {
-        padding: 1rem;
-        font-size: 1.5rem;
+      /* Add blue shiny sweep effect */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(0, 191, 255, 0.1),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: 0.5s;
       }
 
-      .profile-pic {
-        width: 150px;
-        height: 150px;
+      .card:hover::before {
+        transform: translateX(100%);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow:
+          0 0 40px rgba(0, 191, 255, 0.15),
+          0 15px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Ensure content stays above shine effect */
+      .card > * {
+        position: relative;
+        z-index: 1;
       }
 
       .welcome-text {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent);
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
       }
 
-      .card {
-        padding: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      html {
-        font-size: 14px;
+      .welcome-text:hover {
+        color: #66fcff;
+        text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        transform: scale(1.05);
       }
 
-      .center-box {
-        padding: 0.8rem;
-      }
-
-      header {
-        padding: 0.8rem;
-        font-size: 1.3rem;
-      }
-
-      .profile-pic {
-        width: 120px;
-        height: 120px;
-      }
-
-      .welcome-text {
-        font-size: 1.3rem;
-      }
-
-      .card {
-        padding: 1.25rem;
-      }
-
-      .text-content p {
+      p {
+        font-size: 1.1rem;
+        color: #a9cfe3;
+        line-height: 1.6;
         margin-bottom: 1rem;
       }
 
       footer {
-        padding: 0.8rem;
+        background: rgba(20, 20, 20, 0.95);
+        padding: 1rem;
+        text-align: center;
+        color: var(--accent);
         font-size: 0.9rem;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0, 191, 255, 0.1);
+        animation: fadeIn 0.5s ease-out 0.6s backwards;
       }
-    }
-  </style>
-</head>
 
-<script>
-  // Add animation classes on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('header').classList.add('animate-slideDown');
-    document.querySelector('nav').classList.add('animate-fadeIn');
-    document.querySelector('.card').classList.add('animate-fadeIn');
-  });
+      footer small {
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
 
-  // For mobile devices
-  document.querySelectorAll('.dropbtn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      // Don't prevent default here - allow the link to work
-      const dropdown = btn.parentElement;
-      dropdown.classList.toggle('active');
-      
-      // Close other dropdowns
-      document.querySelectorAll('.dropdown').forEach(d => {
-        if (d !== dropdown) d.classList.remove('active');
+      footer small:hover {
+        opacity: 1;
+      }
+
+      .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.05) rotate(5deg);
+        box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        border-color: #66fcff;
+      }
+
+      .text-content {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        margin-top: 1.5rem;
+        border: 1px solid rgba(0, 191, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .text-content:hover {
+        background: rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Base responsive settings */
+      @media (max-width: 1200px) {
+        .profile-section {
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .profile-pic {
+          margin: 0 auto;
+        }
+
+        .text-content {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 15px;
+        }
+
+        .center-box {
+          padding: 1rem;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+
+        nav a,
+        .dropdown-content a {
+          width: 100%;
+          text-align: center;
+          padding: 0.7rem 1rem;
+        }
+
+        .dropdown-content {
+          position: relative;
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+
+        header {
+          padding: 1rem;
+          font-size: 1.5rem;
+        }
+
+        .profile-pic {
+          width: 150px;
+          height: 150px;
+        }
+
+        .welcome-text {
+          font-size: 1.5rem;
+        }
+
+        .card {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        html {
+          font-size: 14px;
+        }
+
+        .center-box {
+          padding: 0.8rem;
+        }
+
+        header {
+          padding: 0.8rem;
+          font-size: 1.3rem;
+        }
+
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+
+        .welcome-text {
+          font-size: 1.3rem;
+        }
+
+        .card {
+          padding: 1.25rem;
+        }
+
+        .text-content p {
+          margin-bottom: 1rem;
+        }
+
+        footer {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+
+  <script>
+    // Add animation classes on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("header").classList.add("animate-slideDown");
+      document.querySelector("nav").classList.add("animate-fadeIn");
+      document.querySelector(".card").classList.add("animate-fadeIn");
+    });
+
+    // For mobile devices
+    document.querySelectorAll(".dropbtn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        // Don't prevent default here - allow the link to work
+        const dropdown = btn.parentElement;
+        dropdown.classList.toggle("active");
+
+        // Close other dropdowns
+        document.querySelectorAll(".dropdown").forEach((d) => {
+          if (d !== dropdown) d.classList.remove("active");
+        });
       });
     });
-  });
 
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.matches('.dropbtn')) {
-      document.querySelectorAll('.dropdown').forEach(d => {
-        d.classList.remove('active');
-      });
-    }
-  });
-</script>
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.matches(".dropbtn")) {
+        document.querySelectorAll(".dropdown").forEach((d) => {
+          d.classList.remove("active");
+        });
+      }
+    });
+  </script>
 </html>
